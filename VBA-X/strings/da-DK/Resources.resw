@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="appBarLoadStateButton.Label" xml:space="preserve">
+    <value>Lade tilstand</value>
+  </data>
+  <data name="MenuAboutLabel" xml:space="preserve">
+    <value>Om</value>
+  </data>
+  <data name="MenuCloudLabel" xml:space="preserve">
+    <value>Cloud</value>
+  </data>
+  <data name="MenuLibLabel" xml:space="preserve">
+    <value>Spil bibliotek</value>
+  </data>
+  <data name="MenuPlayLabel" xml:space="preserve">
+    <value>Spil</value>
+  </data>
+  <data name="MenuSettingsLabel" xml:space="preserve">
+    <value>Indstillinger</value>
+  </data>
+  <data name="appBarPauseButton.Label" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="appBarResetButton.Label" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="appBarSaveStateButton.Label" xml:space="preserve">
+    <value>Gem tilstand</value>
+  </data>
+  <data name="appBarSelectStateButton.Label" xml:space="preserve">
+    <value>Vælg tilstand</value>
+  </data>
+  <data name="aboutAppWarranty.Text" xml:space="preserve">
+    <value>Forfatteren er ikke ansvarlig for ulovlig brug af softwaret. Der er også ingen garanti for dette software og forfatteren er ikke ansvarlig for eventuelle skader</value>
+  </data>
+  <data name="aboutContactLabel.Text" xml:space="preserve">
+    <value>Kontakt:</value>
+  </data>
+  <data name="aboutLicenseHeader.Text" xml:space="preserve">
+    <value>Licens</value>
+  </data>
+  <data name="aboutLicenseLink.Content" xml:space="preserve">
+    <value>Se GNU Public License v3</value>
+  </data>
+  <data name="aboutLicenseSourceCode.Text" xml:space="preserve">
+    <value>En enkel kildekode opfordring kan sendes til den medfølgende e-mail adresse. Den korresponderende kildekode vil blive udbudt i rimelige tid af arbejds dage. </value>
+  </data>
+  <data name="settingsAudioHeader.Text" xml:space="preserve">
+    <value>Lyd</value>
+  </data>
+  <data name="settingsControlHeader.Text" xml:space="preserve">
+    <value>Kontrol</value>
+  </data>
+  <data name="settingsGeneralHeader.Text" xml:space="preserve">
+    <value>Generelt</value>
+  </data>
+  <data name="settingsHeader.Text" xml:space="preserve">
+    <value>Indstillinger</value>
+  </data>
+  <data name="settingsFullscreenCheckbox.Text" xml:space="preserve">
+    <value>Fuld skærm tilstand</value>
+  </data>
+  <data name="settingsVideoHeader.Text" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="settingsLoadConfirmCheckbox.Text" xml:space="preserve">
+    <value>Lade tilstand bekræftelse</value>
+  </data>
+  <data name="settingsSaveConfirmCheckbox.Text" xml:space="preserve">
+    <value>Gem tilstand bekræftelse</value>
+  </data>
+  <data name="MenuCheatsLabel" xml:space="preserve">
+    <value>Cheat Koder</value>
+  </data>
+  <data name="settingsDarkThemeItem.Content" xml:space="preserve">
+    <value>Mørk</value>
+  </data>
+  <data name="settingsLightThemeItem.Content" xml:space="preserve">
+    <value>Lys</value>
+  </data>
+  <data name="settingsThemeLabel.Text" xml:space="preserve">
+    <value>Stil:</value>
+  </data>
+  <data name="settingsAudioQualityTrigger.Text" xml:space="preserve">
+    <value>Høj kvalitet (langsommere):</value>
+  </data>
+  <data name="settingsAudioSoundTrigger.Text" xml:space="preserve">
+    <value>Aktivere lyd:</value>
+  </data>
+  <data name="settingsControlBindingHeader.Text" xml:space="preserve">
+    <value>Tastebindinger</value>
+  </data>
+  <data name="settingsController4WayItem.Content" xml:space="preserve">
+    <value>4-vej d-pad</value>
+  </data>
+  <data name="settingsController8WayItem.Content" xml:space="preserve">
+    <value>8-vej d-pad</value>
+  </data>
+  <data name="settingsControllerDynamicItem.Content" xml:space="preserve">
+    <value>Dynamisk pind</value>
+  </data>
+  <data name="settingsControllerFixedItem.Content" xml:space="preserve">
+    <value>Fast pind</value>
+  </data>
+  <data name="settingsControllerOpacityLabel.Text" xml:space="preserve">
+    <value>Virtuel controller opacitet:</value>
+  </data>
+  <data name="settingsControllerPlayer1Item.Content" xml:space="preserve">
+    <value>Spiller 1</value>
+  </data>
+  <data name="settingsControllerPlayer2Item.Content" xml:space="preserve">
+    <value>Spiller 2</value>
+  </data>
+  <data name="settingsControllerScaleLabel.Text" xml:space="preserve">
+    <value>Virtuel controller størrelse:</value>
+  </data>
+  <data name="settingsControllerStyleLabel.Text" xml:space="preserve">
+    <value>Controller stil:</value>
+  </data>
+  <data name="settingsControllerXboxAssignLabel.Text" xml:space="preserve">
+    <value>Xbox controller:</value>
+  </data>
+  <data name="settingsControllerXboxNotice.Text" xml:space="preserve">
+    <value>Det er muligt at forbinde og bruge en Xbox 360 controller.</value>
+  </data>
+  <data name="settingsControlPadTrigger.Text" xml:space="preserve">
+    <value>Virtuel controller:</value>
+  </data>
+  <data name="settingsControlStickDeadzoneLabel.Text" xml:space="preserve">
+    <value>Pind deadzone:</value>
+  </data>
+  <data name="settingsVideoAspectLabel.Text" xml:space="preserve">
+    <value>Højde-bredde-forhold:</value>
+  </data>
+  <data name="settingsVideoFilterLabel.Text" xml:space="preserve">
+    <value>Filter:</value>
+  </data>
+  <data name="settingsVideoFPSTrigger.Text" xml:space="preserve">
+    <value>Vis FPS</value>
+  </data>
+  <data name="settingsVideoNearestFilterItem.Content" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="settingsVideoOriginalAspectItem.Content" xml:space="preserve">
+    <value>Original</value>
+  </data>
+  <data name="settingsVideoStretchAspectItem.Content" xml:space="preserve">
+    <value>Strækning</value>
+  </data>
+  <data name="settingsControlDownBindingLabel.Text" xml:space="preserve">
+    <value>Ned:</value>
+  </data>
+  <data name="settingsControlLeftBindingLabel.Text" xml:space="preserve">
+    <value>Venstre:</value>
+  </data>
+  <data name="settingsControlRightBindingLabel.Text" xml:space="preserve">
+    <value>Højre:</value>
+  </data>
+  <data name="settingsControlTurboBindingLabel.Text" xml:space="preserve">
+    <value>Turbo modus:</value>
+  </data>
+  <data name="settingsControlUpBindingLabel.Text" xml:space="preserve">
+    <value>Op:</value>
+  </data>
+  <data name="settingsAccentLabel.Text" xml:space="preserve">
+    <value>Accent farve (kræver genstart):</value>
+  </data>
+  <data name="libraryHeader.Text" xml:space="preserve">
+    <value>Bibliotek</value>
+  </data>
+  <data name="libraryTitleDateLabel.Text" xml:space="preserve">
+    <value>Sidst spillet:</value>
+  </data>
+  <data name="libraryChooseDirectoryLabel.Text" xml:space="preserve">
+    <value>Vælg mappe</value>
+  </data>
+  <data name="libraryRefreshDirectoryLabel.Text" xml:space="preserve">
+    <value>Genindlæs</value>
+  </data>
+  <data name="storageSubdirConfirmation" xml:space="preserve">
+    <value>Skabe undermappe '{0}'  til at gemme dit spil for dig?</value>
+  </data>
+  <data name="storageSubdirConfirmationNo" xml:space="preserve">
+    <value>Nej, tak</value>
+  </data>
+  <data name="storageSubdirConfirmationYes" xml:space="preserve">
+    <value>Ja, tak</value>
+  </data>
+  <data name="storageAccessDenied" xml:space="preserve">
+    <value>Adgangen til fil '{0}' er ikke muligt lige nu. Prøv igen om nogle sekunder.</value>
+  </data>
+  <data name="storageAccessDeniedCaption" xml:space="preserve">
+    <value>Fejl</value>
+  </data>
+  <data name="storageSRAMAccessUnknownReason" xml:space="preserve">
+    <value>Ingen adgang til SRAM: Adgang nægtet.</value>
+  </data>
+  <data name="storageStateAccessUnknownReason" xml:space="preserve">
+    <value>Ingen adgang til gem tilstand: Adgang nægtet.</value>
+  </data>
+  <data name="libraryNeverPlayedText" xml:space="preserve">
+    <value>Aldrig</value>
+  </data>
+  <data name="exitAppConfirm" xml:space="preserve">
+    <value>Luk VBA-X?</value>
+  </data>
+  <data name="exitAppConfirmCaption" xml:space="preserve">
+    <value>Advarsel</value>
+  </data>
+  <data name="exitAppConfirmNo" xml:space="preserve">
+    <value>Nej</value>
+  </data>
+  <data name="exitAppConfirmYes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="overlayLoadButton.Label" xml:space="preserve">
+    <value>Lade</value>
+  </data>
+  <data name="overlayPauseButton.Label" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="overlaySaveButton.Label" xml:space="preserve">
+    <value>Gem</value>
+  </data>
+  <data name="overlayState0Button.Label" xml:space="preserve">
+    <value>Vælg tilstand 0</value>
+  </data>
+  <data name="overlayState1Button.Label" xml:space="preserve">
+    <value>Vælg tilstand 1</value>
+  </data>
+  <data name="overlayState2Button.Label" xml:space="preserve">
+    <value>Vælg tilstand 2</value>
+  </data>
+  <data name="overlayState3Button.Label" xml:space="preserve">
+    <value>Vælg tilstand 3</value>
+  </data>
+  <data name="overlayState4Button.Label" xml:space="preserve">
+    <value>Vælg tilstand 4</value>
+  </data>
+  <data name="overlayState5Button.Label" xml:space="preserve">
+    <value>Vælg tilstand 5</value>
+  </data>
+  <data name="overlayState6Button.Label" xml:space="preserve">
+    <value>Vælg tilstand 6</value>
+  </data>
+  <data name="overlayState7Button.Label" xml:space="preserve">
+    <value>Vælg tilstand 7</value>
+  </data>
+  <data name="overlayState8Button.Label" xml:space="preserve">
+    <value>Vælg tilstand 8</value>
+  </data>
+  <data name="overlayStateAutoButton.Label" xml:space="preserve">
+    <value>Vælg automatisk tilstand</value>
+  </data>
+  <data name="loadConfirmMessage" xml:space="preserve">
+    <value>Ugemt fremskridt tabes.</value>
+  </data>
+  <data name="saveConfirmMessage" xml:space="preserve">
+    <value>Det vil overskrive det forrige fremskridt.</value>
+  </data>
+  <data name="warningCaption" xml:space="preserve">
+    <value>Advarsel</value>
+  </data>
+  <data name="resetConfirmMessage" xml:space="preserve">
+    <value>Ugemt fremskridt tabes.</value>
+  </data>
+  <data name="settingsResetConfirmCheckbox.Text" xml:space="preserve">
+    <value>Spil reset bekræftelse</value>
+  </data>
+  <data name="confirmDialogDontAsk" xml:space="preserve">
+    <value>Spørg ikke igen</value>
+  </data>
+  <data name="confirmDialogNo" xml:space="preserve">
+    <value>Nej</value>
+  </data>
+  <data name="confirmDialogYes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="loadConfirmTitle" xml:space="preserve">
+    <value>Lade tilstand?</value>
+  </data>
+  <data name="saveConfirmTitle" xml:space="preserve">
+    <value>Gem tilstand?</value>
+  </data>
+  <data name="overlayCameraButton.Label" xml:space="preserve">
+    <value>Tag screenshot</value>
+  </data>
+  <data name="settingsManualSnapshotCheckbox.Text" xml:space="preserve">
+    <value>Tag snapshots manuelt</value>
+  </data>
+  <data name="settingsVideoScaleLabel.Text" xml:space="preserve">
+    <value>Video resultat størrelse:</value>
+  </data>
+  <data name="cancelLayoutButton.Label" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="commitLayoutButton.Label" xml:space="preserve">
+    <value>Bekræft</value>
+  </data>
+  <data name="resetLayoutButton.Label" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="settingsControlVPadHeader.Text" xml:space="preserve">
+    <value>Virtuel controller</value>
+  </data>
+  <data name="customizeVPadButton.Label" xml:space="preserve">
+    <value>individualisere Controller</value>
+  </data>
+  <data name="hidBindingLeftLabel.Text" xml:space="preserve">
+    <value>Venstre:</value>
+  </data>
+  <data name="hidDevicesLabel.Text" xml:space="preserve">
+    <value>Enhed:</value>
+  </data>
+  <data name="hidButtonDescription" xml:space="preserve">
+    <value>Knap {0}</value>
+  </data>
+  <data name="hidAxisDescription" xml:space="preserve">
+    <value>Akse {0}{1}</value>
+  </data>
+  <data name="hidDpadDown" xml:space="preserve">
+    <value>DPad Ned</value>
+  </data>
+  <data name="hidDpadLeft" xml:space="preserve">
+    <value>DPad Venstre</value>
+  </data>
+  <data name="hidDpadRight" xml:space="preserve">
+    <value>DPad Højre</value>
+  </data>
+  <data name="hidDpadUp" xml:space="preserve">
+    <value>DPad Op</value>
+  </data>
+  <data name="hidBindingDownLabel.Text" xml:space="preserve">
+    <value>Ned:</value>
+  </data>
+  <data name="hidBindingRightLabel.Text" xml:space="preserve">
+    <value>Højre:</value>
+  </data>
+  <data name="hidBindingUpLabel.Text" xml:space="preserve">
+    <value>Op:</value>
+  </data>
+  <data name="clearBindingsButton1.Content" xml:space="preserve">
+    <value>Rydder</value>
+  </data>
+  <data name="clearBindingsButton2.Content" xml:space="preserve">
+    <value>Rydder</value>
+  </data>
+  <data name="settingsControlHidButton.Content" xml:space="preserve">
+    <value>Konfigurer HID controller</value>
+  </data>
+  <data name="aboutFAQ1.Text" xml:space="preserve">
+    <value>Hvordan importer jeg ROMs?</value>
+  </data>
+  <data name="aboutFAQ1Answer.Text" xml:space="preserve">
+    <value>Går til 'Spil bibliotek' side og tryk på "vælg mappe"-knap til øvre højre. Vælg mappen der indeholder ROMs  (.gb, .gbc, .gba, .zip filer) eller hvor du vil gerne gemme dem. Så, viser biblioteks siden alle spil de er indeholdt i den udvalgte mappe. Du må gemme filer på din telefon i enhver mappe ved brug af USB forbindelse eller apps som OneDrive eller File Explorer (f.eks. din dokumenter mappe).</value>
+  </data>
+  <data name="aboutFAQ2.Text" xml:space="preserve">
+    <value>Hvordan gemmer jeg mine tilstande?</value>
+  </data>
+  <data name="aboutFAQ2Answer.Text" xml:space="preserve">
+    <value>Alle tilstande (.sav, .sgm filer) er gemmet i din ROM mappe. Til at backuppe tilstande, er det nødvendigt at kopiere korresponderende filer til dit backup sted. Til at kopiere filer må du bruge enten USB forbindelse eller apps som OneDrive eller File Explorer.</value>
+  </data>
+  <data name="aboutFAQ3.Text" xml:space="preserve">
+    <value>Hvordan stigner jeg performancen?</value>
+  </data>
+  <data name="aboutFAQ3Answer.Text" xml:space="preserve">
+    <value>Stigner frame skip i video indstillinger.</value>
+  </data>
+  <data name="aboutFAQ3Answer2.Text" xml:space="preserve">
+    <value>Vælg et mindre video filter (xBR filtre er langsomere).</value>
+  </data>
+  <data name="aboutFAQ3Answer3.Text" xml:space="preserve">
+    <value>Deaktivere lyd eller høj lyd kvalitet i lyd indstillingerne.</value>
+  </data>
+  <data name="cheatsHeader.Text" xml:space="preserve">
+    <value>Cheat koder</value>
+  </data>
+  <data name="errorCaption" xml:space="preserve">
+    <value>Fejl</value>
+  </data>
+  <data name="invalidROMData" xml:space="preserve">
+    <value>Ugyldigt ROM data.</value>
+  </data>
+  <data name="loadCheatDataError" xml:space="preserve">
+    <value>Umuligt at rette cheat data.</value>
+  </data>
+  <data name="cheatsAddButton.Content" xml:space="preserve">
+    <value>Tilføj(e) kode(r)</value>
+  </data>
+  <data name="cheatsAddCodes.Text" xml:space="preserve">
+    <value>Kode(r):</value>
+  </data>
+  <data name="cheatsAddDescription.Text" xml:space="preserve">
+    <value>Beskrivelse:</value>
+  </data>
+  <data name="cheatsAddHeader.Text" xml:space="preserve">
+    <value>Tilføje cheat koder</value>
+  </data>
+  <data name="cheatsManageHeader.Text" xml:space="preserve">
+    <value>Administrere Koder</value>
+  </data>
+  <data name="cheatsNoROMLoaded.Text" xml:space="preserve">
+    <value>Du skal først lade en ROM.</value>
+  </data>
+  <data name="cheatsEmptyCodeMessage" xml:space="preserve">
+    <value>Du skal indtaste en gyldig cheat kode.</value>
+  </data>
+  <data name="cheatsEmptyDescriptionMessage" xml:space="preserve">
+    <value>Du skal indtaste en gyldig cheat kode beskrivelse.</value>
+  </data>
+  <data name="cheatsInvalidCodeMessage" xml:space="preserve">
+    <value>Ugyldig(e) cheat kode(r).</value>
+  </data>
+  <data name="cheatsWriteError" xml:space="preserve">
+    <value>Fejl mens at gemme cheats i filen.</value>
+  </data>
+  <data name="aboutFAQ4.Text" xml:space="preserve">
+    <value>Hvordan synkroniserer jeg tilstande blandt enheder ?</value>
+  </data>
+  <data name="aboutFAQ4Answer1.Text" xml:space="preserve">
+    <value>På PC eller tablet kan du gemme din ROM mappe i OneDrive for automatisk cloud synkronisering. OneDrive synkroniserer ikke dine filer automatisk på din telefon,  men du kan kopiere cloud filer til din telefon ved at bruge den OneDrive app (eller den anden vej rundt).</value>
+  </data>
+  <data name="aboutFAQ4Answer2.Text" xml:space="preserve">
+    <value>Eller kopiere filerne manuelt (ved USB, apps eller andre måde) når du skifter enhederne.</value>
+  </data>
+  <data name="cancelButtonLabel" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="settingsAudioVolumeLabel.Text" xml:space="preserve">
+    <value>Volumen:</value>
+  </data>
+  <data name="storageROMDirAccessDenied" xml:space="preserve">
+    <value>Det er ikke muligt at få adgangen til den udvalgte mappe. Tjek om der er adgangen til den forrige mappe eller vælg en ny mappe.</value>
+  </data>
+</root>

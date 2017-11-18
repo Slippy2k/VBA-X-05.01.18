@@ -1,0 +1,558 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="appBarLoadStateButton.Label" xml:space="preserve">
+    <value>Lade Spielstand</value>
+  </data>
+  <data name="MainTitle.Text" xml:space="preserve">
+    <value>VBA-X</value>
+  </data>
+  <data name="MenuAboutLabel" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
+  <data name="MenuCloudLabel" xml:space="preserve">
+    <value>Cloud</value>
+  </data>
+  <data name="MenuLibLabel" xml:space="preserve">
+    <value>Bibliothek</value>
+  </data>
+  <data name="MenuPlayLabel" xml:space="preserve">
+    <value>Spielen</value>
+  </data>
+  <data name="MenuSettingsLabel" xml:space="preserve">
+    <value>Optionen</value>
+  </data>
+  <data name="appBarPauseButton.Label" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="appBarResetButton.Label" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="appBarSaveStateButton.Label" xml:space="preserve">
+    <value>Speicherplatz</value>
+  </data>
+  <data name="appBarSelectStateButton.Label" xml:space="preserve">
+    <value>Wähle Speicherplatz</value>
+  </data>
+  <data name="aboutAppHeader.Text" xml:space="preserve">
+    <value>VBA-X</value>
+  </data>
+  <data name="aboutAppWarranty.Text" xml:space="preserve">
+    <value>Der Autor ist nicht verantwortlich für illegale Nutzungen dieser Software. Desweiteren, gibt es keinerlei Garantie für diese Software und der Autor haftet nicht für eventuelle Schäden, die durch die Nutzung hervorgerufen werden könnten.</value>
+  </data>
+  <data name="aboutContactLabel.Text" xml:space="preserve">
+    <value>Kontakt:</value>
+  </data>
+  <data name="aboutLicenseHeader.Text" xml:space="preserve">
+    <value>Lizenz</value>
+  </data>
+  <data name="aboutLicenseSourceCode.Text" xml:space="preserve">
+    <value>Eine Anfrage nach dem Quellcode kann an die angegebene e-mail adresse gestellt werden. Der dazugehörige Quellcode wird in einer angemessenen Zeitperiode bereit gestellt. Dies kann einige Arbeitstage in Anspruch nehmen.</value>
+  </data>
+  <data name="settingsAudioHeader.Text" xml:space="preserve">
+    <value>Audio</value>
+  </data>
+  <data name="settingsControlHeader.Text" xml:space="preserve">
+    <value>Bedienung</value>
+  </data>
+  <data name="settingsGeneralHeader.Text" xml:space="preserve">
+    <value>Allgemeines</value>
+  </data>
+  <data name="settingsHeader.Text" xml:space="preserve">
+    <value>Optionen</value>
+  </data>
+  <data name="settingsFullscreenCheckbox.Text" xml:space="preserve">
+    <value>Fullscreen Modus</value>
+  </data>
+  <data name="settingsVideoHeader.Text" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="settingsLoadConfirmCheckbox.Text" xml:space="preserve">
+    <value>Bestätigung beim Laden</value>
+  </data>
+  <data name="settingsSaveConfirmCheckbox.Text" xml:space="preserve">
+    <value>Bestätigung beim Speichern</value>
+  </data>
+  <data name="MenuCheatsLabel" xml:space="preserve">
+    <value>Cheats</value>
+  </data>
+  <data name="settingsDarkThemeItem.Content" xml:space="preserve">
+    <value>Dunkel</value>
+  </data>
+  <data name="settingsLightThemeItem.Content" xml:space="preserve">
+    <value>Hell</value>
+  </data>
+  <data name="settingsThemeLabel.Text" xml:space="preserve">
+    <value>Stil:</value>
+  </data>
+  <data name="settingsAudioQualityTrigger.Text" xml:space="preserve">
+    <value>Hohe Qualität (langsamer):</value>
+  </data>
+  <data name="settingsAudioSoundTrigger.Text" xml:space="preserve">
+    <value>Aktiviere Ton:</value>
+  </data>
+  <data name="settingsControlBindingHeader.Text" xml:space="preserve">
+    <value>Tastenkombinationen</value>
+  </data>
+  <data name="settingsController4WayItem.Content" xml:space="preserve">
+    <value>4-weg d-pad</value>
+  </data>
+  <data name="settingsController8WayItem.Content" xml:space="preserve">
+    <value>8-weg d-pad</value>
+  </data>
+  <data name="settingsControllerDynamicItem.Content" xml:space="preserve">
+    <value>Dynamischer Stick</value>
+  </data>
+  <data name="settingsControllerFixedItem.Content" xml:space="preserve">
+    <value>Fester Stick</value>
+  </data>
+  <data name="settingsControllerOpacityLabel.Text" xml:space="preserve">
+    <value>Virtuelle Controller Sichtbarkeit:</value>
+  </data>
+  <data name="settingsControllerPlayer1Item.Content" xml:space="preserve">
+    <value>Spieler 1</value>
+  </data>
+  <data name="settingsControllerPlayer2Item.Content" xml:space="preserve">
+    <value>Spieler 2</value>
+  </data>
+  <data name="settingsControllerScaleLabel.Text" xml:space="preserve">
+    <value>Virtuelle Controller Größe:</value>
+  </data>
+  <data name="settingsControllerStyleLabel.Text" xml:space="preserve">
+    <value>Controller Stil:</value>
+  </data>
+  <data name="settingsControllerXboxAssignLabel.Text" xml:space="preserve">
+    <value>Xbox Controller:</value>
+  </data>
+  <data name="settingsControllerXboxNotice.Text" xml:space="preserve">
+    <value>Es ist möglich einen Xbox Controller anzuschließen und zu nutzen.</value>
+  </data>
+  <data name="settingsControlPadTrigger.Text" xml:space="preserve">
+    <value>Virtueller Controller:</value>
+  </data>
+  <data name="settingsVideoFilterLabel.Text" xml:space="preserve">
+    <value>Filter:</value>
+  </data>
+  <data name="settingsVideoFPSTrigger.Text" xml:space="preserve">
+    <value>FPS anzeigen</value>
+  </data>
+  <data name="settingsVideoNearestFilterItem.Content" xml:space="preserve">
+    <value>Nearest Neighbour</value>
+  </data>
+  <data name="settingsVideoOriginalAspectItem.Content" xml:space="preserve">
+    <value>Original</value>
+  </data>
+  <data name="settingsVideoStretchAspectItem.Content" xml:space="preserve">
+    <value>Dehnen</value>
+  </data>
+  <data name="settingsVideoTurboFrameSkipLabel.Text" xml:space="preserve">
+    <value>Turbo Modus Geschwindigkeit:</value>
+  </data>
+  <data name="settingsControlDownBindingLabel.Text" xml:space="preserve">
+    <value>Unten:</value>
+  </data>
+  <data name="settingsControlLeftBindingLabel.Text" xml:space="preserve">
+    <value>Links:</value>
+  </data>
+  <data name="settingsControlRightBindingLabel.Text" xml:space="preserve">
+    <value>Rechts:</value>
+  </data>
+  <data name="settingsControlTurboBindingLabel.Text" xml:space="preserve">
+    <value>Turbo Modus:</value>
+  </data>
+  <data name="settingsControlUpBindingLabel.Text" xml:space="preserve">
+    <value>Oben:</value>
+  </data>
+  <data name="settingsAccentLabel.Text" xml:space="preserve">
+    <value>Akzent Farbe (Neustart notwendig):</value>
+  </data>
+  <data name="libraryHeader.Text" xml:space="preserve">
+    <value>Bibliothek</value>
+  </data>
+  <data name="libraryTitleDateLabel.Text" xml:space="preserve">
+    <value>Zuletzt gespielt:</value>
+  </data>
+  <data name="libraryChooseDirectoryLabel.Text" xml:space="preserve">
+    <value>Wähle Verzeichnis</value>
+  </data>
+  <data name="libraryRefreshDirectoryLabel.Text" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="storageSubdirConfirmation" xml:space="preserve">
+    <value>Soll ein Unterverzeichnis '{0}' um Spielstände abzuspeichern angelegt werden?</value>
+  </data>
+  <data name="storageSubdirConfirmationNo" xml:space="preserve">
+    <value>Ja, bitte</value>
+  </data>
+  <data name="storageSubdirConfirmationYes" xml:space="preserve">
+    <value>Nein, danke</value>
+  </data>
+  <data name="storageAccessDenied" xml:space="preserve">
+    <value>Auf Datei '{0}' kann momentan nicht zugegriffen werden. Bitte in einigen Sekunden erneut versuchen.</value>
+  </data>
+  <data name="storageAccessDeniedCaption" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="storageSRAMAccessUnknownReason" xml:space="preserve">
+    <value>Kein Zugriff auf SRAM möglich: Zugriff verweigert.</value>
+  </data>
+  <data name="storageStateAccessUnknownReason" xml:space="preserve">
+    <value>Kein Zugriff auf Speicherstand möglich: Zugriff verweigert.</value>
+  </data>
+  <data name="libraryNeverPlayedText" xml:space="preserve">
+    <value>Nie</value>
+  </data>
+  <data name="exitAppConfirm" xml:space="preserve">
+    <value>VBA-X schließen?</value>
+  </data>
+  <data name="exitAppConfirmCaption" xml:space="preserve">
+    <value>Warnung</value>
+  </data>
+  <data name="exitAppConfirmNo" xml:space="preserve">
+    <value>Nein</value>
+  </data>
+  <data name="exitAppConfirmYes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="overlayLoadButton.Label" xml:space="preserve">
+    <value>Lade</value>
+  </data>
+  <data name="overlayPauseButton.Label" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="overlayResetButton.Label" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="overlaySaveButton.Label" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="overlayState0Button.Label" xml:space="preserve">
+    <value>Wähle Speicherplatz 0</value>
+  </data>
+  <data name="overlayState1Button.Label" xml:space="preserve">
+    <value>Wähle Speicherplatz 1</value>
+  </data>
+  <data name="overlayState2Button.Label" xml:space="preserve">
+    <value>Wähle Speicherplatz 2</value>
+  </data>
+  <data name="overlayState3Button.Label" xml:space="preserve">
+    <value>Wähle Speicherplatz 3</value>
+  </data>
+  <data name="overlayState4Button.Label" xml:space="preserve">
+    <value>Wähle Speicherplatz 4</value>
+  </data>
+  <data name="overlayState5Button.Label" xml:space="preserve">
+    <value>Wähle Speicherplatz 5</value>
+  </data>
+  <data name="overlayState6Button.Label" xml:space="preserve">
+    <value>Wähle Speicherplatz 6</value>
+  </data>
+  <data name="overlayState7Button.Label" xml:space="preserve">
+    <value>Wähle Speicherplatz 7</value>
+  </data>
+  <data name="overlayState8Button.Label" xml:space="preserve">
+    <value>Wähle Speicherplatz 8</value>
+  </data>
+  <data name="overlayStateAutoButton.Label" xml:space="preserve">
+    <value>Wähle Auto Speicherplatz</value>
+  </data>
+  <data name="loadConfirmMessage" xml:space="preserve">
+    <value>Ungespeicherter Fortschritt wird nicht gespeichert.</value>
+  </data>
+  <data name="saveConfirmMessage" xml:space="preserve">
+    <value>Dies wird den letzten Speicherstand überschreiben.</value>
+  </data>
+  <data name="warningCaption" xml:space="preserve">
+    <value>Warnung</value>
+  </data>
+  <data name="resetConfirmMessage" xml:space="preserve">
+    <value>Ungespeicherter Fortschritt wird nicht gespeichert.</value>
+  </data>
+  <data name="settingsResetConfirmCheckbox.Text" xml:space="preserve">
+    <value>Bestätigung beim Zurücksetzen</value>
+  </data>
+  <data name="confirmDialogDontAsk" xml:space="preserve">
+    <value>Nicht erneut Fragen</value>
+  </data>
+  <data name="confirmDialogNo" xml:space="preserve">
+    <value>Nein</value>
+  </data>
+  <data name="confirmDialogYes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="loadConfirmTitle" xml:space="preserve">
+    <value>Spielstand laden?</value>
+  </data>
+  <data name="resetConfirmTitle" xml:space="preserve">
+    <value>Zurücksetzen?</value>
+  </data>
+  <data name="saveConfirmTitle" xml:space="preserve">
+    <value>Spielstand speichern?</value>
+  </data>
+  <data name="overlayCameraButton.Label" xml:space="preserve">
+    <value>Mache Screenshot</value>
+  </data>
+  <data name="settingsManualSnapshotCheckbox.Text" xml:space="preserve">
+    <value>Snapshots manuell erstellen</value>
+  </data>
+  <data name="settingsVideoScaleLabel.Text" xml:space="preserve">
+    <value>Video Ausgabe Größe:</value>
+  </data>
+  <data name="cancelLayoutButton.Label" xml:space="preserve">
+    <value>Ablehnen</value>
+  </data>
+  <data name="commitLayoutButton.Label" xml:space="preserve">
+    <value>Fertig</value>
+  </data>
+  <data name="resetLayoutButton.Label" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="settingsControlVPadHeader.Text" xml:space="preserve">
+    <value>Virtueller Controller</value>
+  </data>
+  <data name="customizeVPadButton.Label" xml:space="preserve">
+    <value>Controller anpassen</value>
+  </data>
+  <data name="hidBindingLeftLabel.Text" xml:space="preserve">
+    <value>Links:</value>
+  </data>
+  <data name="hidDevicesLabel.Text" xml:space="preserve">
+    <value>Geräte:</value>
+  </data>
+  <data name="hidButtonDescription" xml:space="preserve">
+    <value>Knopf {0}</value>
+  </data>
+  <data name="hidAxisDescription" xml:space="preserve">
+    <value>Achse {0}{1}</value>
+  </data>
+  <data name="hidDpadDown" xml:space="preserve">
+    <value>DPad Unten</value>
+  </data>
+  <data name="hidDpadLeft" xml:space="preserve">
+    <value>DPad Links</value>
+  </data>
+  <data name="hidDpadRight" xml:space="preserve">
+    <value>DPad Rechts</value>
+  </data>
+  <data name="hidDpadUp" xml:space="preserve">
+    <value>DPad Oben</value>
+  </data>
+  <data name="hidBindingDownLabel.Text" xml:space="preserve">
+    <value>Unten:</value>
+  </data>
+  <data name="hidBindingRightLabel.Text" xml:space="preserve">
+    <value>Rechts:</value>
+  </data>
+  <data name="hidBindingUpLabel.Text" xml:space="preserve">
+    <value>Oben:</value>
+  </data>
+  <data name="clearBindingsButton1.Content" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="clearBindingsButton2.Content" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="settingsControlHidButton.Content" xml:space="preserve">
+    <value>HID Controller Einstellungen</value>
+  </data>
+  <data name="aboutFAQ1.Text" xml:space="preserve">
+    <value>Wie importiere ich ROMs?</value>
+  </data>
+  <data name="aboutFAQ1Answer.Text" xml:space="preserve">
+    <value>Navigiere zur 'Bibliothek' und drücke den Browse Knopf oben rechts. Wähle das Verzeichnis aus, das die ROMs enthält (.gb, .gbc, .gba, .zip Dateien) oder wo sie gespeichert werden sollen. Danach wird die Bibliotheksseite alle Spiele die im ausgewählten Verzeichnis enthalten sind anzeigen. Auf einem Handy können Dateien in jedem Verzeichnis gespeichert werden, durch die Nutzung einer USB Verbindung oder eine App wie OneDrive oder File Explorer (z.B. den Dokumente Ordner).</value>
+  </data>
+  <data name="aboutFAQ2.Text" xml:space="preserve">
+    <value>Wie sichere ich meine Spielstände?</value>
+  </data>
+  <data name="aboutFAQ2Answer.Text" xml:space="preserve">
+    <value>Alle Speicherstände (.sav, .sgm Dateien) werden in deinem ROM Verzeichnis gespeichert. Um diese zu sichern, musst du nur die Dateien kopieren und abspeichern. Um die Dateien zu kopieren kannst du entweder eine USB Verbindung oder eine App wie OneDrive/File Explorer nutzen.</value>
+  </data>
+  <data name="aboutFAQ3.Text" xml:space="preserve">
+    <value>Wie kann ich die Performance steigern?</value>
+  </data>
+  <data name="aboutFAQ3Answer.Text" xml:space="preserve">
+    <value>Erhöhe frame skip in den Video Einstellungen.</value>
+  </data>
+  <data name="aboutFAQ3Answer2.Text" xml:space="preserve">
+    <value>Wähle einen niedrigeren Video Filter (xBR Filter sind langsamer).</value>
+  </data>
+  <data name="aboutFAQ3Answer3.Text" xml:space="preserve">
+    <value>Deaktiviere Audio oder hohe Audio Qualität in den Audio Einstellungen.</value>
+  </data>
+  <data name="cheatsHeader.Text" xml:space="preserve">
+    <value>Cheat Codes</value>
+  </data>
+  <data name="errorCaption" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="invalidROMData" xml:space="preserve">
+    <value>Ungültiges ROM.</value>
+  </data>
+  <data name="loadCheatDataError" xml:space="preserve">
+    <value>Wiederherstellung der Cheat Daten fehlgeschlagen.</value>
+  </data>
+  <data name="cheatsAddButton.Content" xml:space="preserve">
+    <value>Code(s) hinzufügen</value>
+  </data>
+  <data name="cheatsAddCodes.Text" xml:space="preserve">
+    <value>Code(s):</value>
+  </data>
+  <data name="cheatsAddDescription.Text" xml:space="preserve">
+    <value>Beschreibung:</value>
+  </data>
+  <data name="cheatsAddHeader.Text" xml:space="preserve">
+    <value>Cheat Codes hinzufügen</value>
+  </data>
+  <data name="cheatsManageHeader.Text" xml:space="preserve">
+    <value>Codes Verwalten</value>
+  </data>
+  <data name="cheatsNoROMLoaded.Text" xml:space="preserve">
+    <value>Du musst zuerst eine ROM laden.</value>
+  </data>
+  <data name="cheatsEmptyCodeMessage" xml:space="preserve">
+    <value>Du musst einen gültigen Cheat Code eingeben.</value>
+  </data>
+  <data name="cheatsEmptyDescriptionMessage" xml:space="preserve">
+    <value>Du musst eine Cheat Code Beschreibung eingeben.</value>
+  </data>
+  <data name="cheatsInvalidCodeMessage" xml:space="preserve">
+    <value>Ungültige(r) Cheat Code(s).</value>
+  </data>
+  <data name="cheatsWriteError" xml:space="preserve">
+    <value>Fehler beim speichern der Cheats in der Datei.</value>
+  </data>
+  <data name="aboutFAQ4.Text" xml:space="preserve">
+    <value>Wie synchronisiere ich Speicherstände über mehrere Geräte?</value>
+  </data>
+  <data name="aboutFAQ4Answer1.Text" xml:space="preserve">
+    <value>Auf einem PC oder Tablet ist es möglich das ROM Verzeichnis direkt in OneDrive abzulegen für Cloud-Synchronisation. OneDrive synchronisiert Dateien auf einem Handy nicht automatisch, aber es ist möglich Cloud Dateien mit der OneDrive app zu kopieren oder andersrum.</value>
+  </data>
+  <data name="aboutFAQ4Answer2.Text" xml:space="preserve">
+    <value>Oder Dateien manuell kopieren (mit USB, apps oder andere Methoden) wenn du das Gerät wechselst.</value>
+  </data>
+  <data name="cancelButtonLabel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="settingsAudioVolumeLabel.Text" xml:space="preserve">
+    <value>Lautstärke:</value>
+  </data>
+  <data name="storageROMDirAccessDenied" xml:space="preserve">
+    <value>Auf das ROM-Verzeichnis konnte nicht zugegriffen werden. Es wird stattdessen das Standardverzeichnis verwendet. Überprüfe, ob das Verzeichnis zugreifbar ist oder wähle ein anderes aus.</value>
+  </data>
+</root>

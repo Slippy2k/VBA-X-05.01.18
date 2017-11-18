@@ -1,0 +1,97 @@
+﻿<Page
+    x:Class="VBA_X.MainPage"
+    local:TitleBar.BackgroundColor="{ThemeResource SystemAccentColor}"
+    local:TitleBar.ForegroundColor="White"
+    local:TitleBar.ButtonBackgroundColor="{ThemeResource SystemAccentColor}"
+    local:TitleBar.ButtonForegroundColor="White"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VBA_X"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    
+    <Page.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="NavLinkItemTemplate" x:DataType="local:NavLink">
+                <StackPanel Orientation="Horizontal"  Margin="2,0,0,0">
+                    <SymbolIcon Symbol="{x:Bind Symbol}"/>
+                    <TextBlock Text="{x:Bind Label}" Margin="24,0,0,0" VerticalAlignment="Center"/>
+                </StackPanel>
+            </DataTemplate>
+            
+            <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Default">
+                    <SolidColorBrush x:Key="ThemeColorBrush" Color="Black" />
+                    <SolidColorBrush x:Key="TransparentNavPaneBackgroundThemeBrush" Color="{ThemeResource SystemAccentColor}" Opacity="0.5" />
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <SolidColorBrush x:Key="ThemeColorBrush" Color="Black" />
+                    <SolidColorBrush x:Key="TransparentNavPaneBackgroundThemeBrush" Color="{ThemeResource SystemAccentColor}" Opacity="0.5" />
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="ThemeColorBrush" Color="White" />
+                    <SolidColorBrush x:Key="TransparentNavPaneBackgroundThemeBrush" Color="{ThemeResource SystemAccentColor}" Opacity="0.25" />
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Background="Transparent" x:Name="mainGrid">
+
+        <SwapChainPanel Name="swapChainPanel" Grid.Row="0" />
+
+        <SplitView Background="Transparent" PaneBackground="{ThemeResource ThemeColorBrush}"
+               IsPaneOpen="False" DisplayMode="Overlay" OpenPaneLength="175"
+               x:Name="splitView">
+            <SplitView.Pane>
+                <Grid Background="{ThemeResource TransparentNavPaneBackgroundThemeBrush}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="48" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Margin="53,0,0,0" Grid.Row="0" x:Uid="MainTitle" Text="VBA-X"
+                               Style="{StaticResource splitViewTitleStyle}" x:Name="mainTitleLabel"/>
+                    <ListView x:Name="topItemsList" SelectionMode="Single" Grid.Row="1" VerticalAlignment="Stretch"
+                              ItemsSource="{x:Bind TopNavLinks}" ItemTemplate="{StaticResource NavLinkItemTemplate}"
+                              SelectionChanged="topItemsList_SelectionChanged"/>
+                    <ListView x:Name="bottomItemsList" SelectionMode="Single" Grid.Row="2" VerticalAlignment="Stretch"
+                        ItemsSource="{x:Bind BottomNavLinks}" ItemTemplate="{StaticResource NavLinkItemTemplate}"
+                              SelectionChanged="bottomItemsList_SelectionChanged"/>
+                </Grid>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Grid Tapped="Content_Tapped">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Frame x:Name="SplitViewFrame" Grid.Row="0" />
+                </Grid>
+            </SplitView.Content>
+        </SplitView>
+
+        <Button Style="{StaticResource SplitViewTogglePaneButtonStyle}" x:Name="splitviewToggle" Click="splitviewToggle_Click"
+                Background="{StaticResource TransparentMenuButtonThemeBrush}"/>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="normalState">
+                    <VisualState.Setters>
+                        <Setter Target="bottomItemsList.Margin" Value="0,0,0,0" />
+                        <Setter Target="splitviewToggle.VerticalAlignment" Value="Top" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="mobilePortraitState">
+                    <VisualState.Setters>
+                        <Setter Target="bottomItemsList.Margin" Value="0,0,0,50" />
+                        <Setter Target="splitviewToggle.VerticalAlignment" Value="Bottom" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</Page>

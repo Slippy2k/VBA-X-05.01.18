@@ -1,0 +1,760 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="appBarLoadStateButton.Label" xml:space="preserve">
+    <value>Load state</value>
+  </data>
+  <data name="MainTitle.Text" xml:space="preserve">
+    <value>VBA-X</value>
+  </data>
+  <data name="MenuAboutLabel" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="MenuCloudLabel" xml:space="preserve">
+    <value>Cloud</value>
+  </data>
+  <data name="MenuLibLabel" xml:space="preserve">
+    <value>Game library</value>
+  </data>
+  <data name="MenuPlayLabel" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="MenuSettingsLabel" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="appBarPauseButton.Label" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="appBarResetButton.Label" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="appBarSaveStateButton.Label" xml:space="preserve">
+    <value>Save state</value>
+  </data>
+  <data name="appBarSelectStateButton.Label" xml:space="preserve">
+    <value>Select state</value>
+  </data>
+  <data name="aboutAppHeader.Text" xml:space="preserve">
+    <value>VBA-X</value>
+  </data>
+  <data name="aboutAppWarranty.Text" xml:space="preserve">
+    <value>The author is not responsible for any illegal use of this software. Furthermore, there is no warranty for this software and the author is not liable for any damages.</value>
+  </data>
+  <data name="aboutContact.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="aboutContactLabel.Text" xml:space="preserve">
+    <value>Contact:</value>
+  </data>
+  <data name="aboutLicenseHeader.Text" xml:space="preserve">
+    <value>License</value>
+  </data>
+  <data name="aboutLicenseLink.Content" xml:space="preserve">
+    <value>See GNU Public License v3</value>
+  </data>
+  <data name="aboutLicensePreamble.Text" xml:space="preserve">
+    <value>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</value>
+  </data>
+  <data name="aboutLicenseSourceCode.Text" xml:space="preserve">
+    <value>A simple source code request can be sent to the provided contact e-mail address. The corresponding source code will be provided within reasonable time on working days. </value>
+  </data>
+  <data name="aboutVersion.Text" xml:space="preserve">
+    <value>1.1.14</value>
+  </data>
+  <data name="aboutVersionLabel.Text" xml:space="preserve">
+    <value>Version:</value>
+  </data>
+  <data name="licenseUri" xml:space="preserve">
+    <value>http://www.gnu.org/licenses/gpl-3.0.txt</value>
+  </data>
+  <data name="settingsAudioHeader.Text" xml:space="preserve">
+    <value>Audio</value>
+  </data>
+  <data name="settingsControlHeader.Text" xml:space="preserve">
+    <value>Controls</value>
+  </data>
+  <data name="settingsGeneralHeader.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="settingsHeader.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="settingsFullscreenCheckbox.Text" xml:space="preserve">
+    <value>Fullscreen mode</value>
+  </data>
+  <data name="settingsVideoHeader.Text" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="settingsLoadConfirmCheckbox.Text" xml:space="preserve">
+    <value>Load state confirmation</value>
+  </data>
+  <data name="settingsSaveConfirmCheckbox.Text" xml:space="preserve">
+    <value>Save state confirmation</value>
+  </data>
+  <data name="MenuCheatsLabel" xml:space="preserve">
+    <value>Manage cheats</value>
+  </data>
+  <data name="settingsDarkThemeItem.Content" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="settingsLightThemeItem.Content" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="settingsThemeLabel.Text" xml:space="preserve">
+    <value>Theme:</value>
+  </data>
+  <data name="settingsAudioQualityTrigger.Text" xml:space="preserve">
+    <value>High quality (slower):</value>
+  </data>
+  <data name="settingsAudioSoundTrigger.Text" xml:space="preserve">
+    <value>Enable sound:</value>
+  </data>
+  <data name="settingsControlBindingHeader.Text" xml:space="preserve">
+    <value>Key bindings</value>
+  </data>
+  <data name="settingsController4WayItem.Content" xml:space="preserve">
+    <value>4-way d-pad</value>
+  </data>
+  <data name="settingsController8WayItem.Content" xml:space="preserve">
+    <value>8-way d-pad</value>
+  </data>
+  <data name="settingsControllerDynamicItem.Content" xml:space="preserve">
+    <value>Dynamic stick</value>
+  </data>
+  <data name="settingsControllerFixedItem.Content" xml:space="preserve">
+    <value>Fixed stick</value>
+  </data>
+  <data name="settingsControllerOpacityLabel.Text" xml:space="preserve">
+    <value>Virtual controller opacity:</value>
+  </data>
+  <data name="settingsControllerPlayer1Item.Content" xml:space="preserve">
+    <value>Player 1</value>
+  </data>
+  <data name="settingsControllerPlayer2Item.Content" xml:space="preserve">
+    <value>Player 2</value>
+  </data>
+  <data name="settingsControllerScaleLabel.Text" xml:space="preserve">
+    <value>Virtual controller scale:</value>
+  </data>
+  <data name="settingsControllerStyleLabel.Text" xml:space="preserve">
+    <value>Controller style:</value>
+  </data>
+  <data name="settingsControllerXboxAssignLabel.Text" xml:space="preserve">
+    <value>Xbox controller:</value>
+  </data>
+  <data name="settingsControllerXboxNotice.Text" xml:space="preserve">
+    <value>You can connect and use an Xbox 360 controller.</value>
+  </data>
+  <data name="settingsControlPadTrigger.Text" xml:space="preserve">
+    <value>Virtual controller:</value>
+  </data>
+  <data name="settingsControlStickDeadzoneLabel.Text" xml:space="preserve">
+    <value>Stick deadzone:</value>
+  </data>
+  <data name="settingsVideo1t1AspectItem.Content" xml:space="preserve">
+    <value>1:1</value>
+  </data>
+  <data name="settingsVideo4t3AspectItem.Content" xml:space="preserve">
+    <value>4:3</value>
+  </data>
+  <data name="settingsVideo5t4AspectItem.Content" xml:space="preserve">
+    <value>5:4</value>
+  </data>
+  <data name="settingsVideoAspectLabel.Text" xml:space="preserve">
+    <value>Aspect ratio:</value>
+  </data>
+  <data name="settingsVideoBilinearFilterItem.Content" xml:space="preserve">
+    <value>Bilinear</value>
+  </data>
+  <data name="settingsVideoFilterLabel.Text" xml:space="preserve">
+    <value>Filter:</value>
+  </data>
+  <data name="settingsVideoFPSTrigger.Text" xml:space="preserve">
+    <value>Show FPS</value>
+  </data>
+  <data name="settingsVideoFrameSkipLabel.Text" xml:space="preserve">
+    <value>Frame skip:</value>
+  </data>
+  <data name="settingsVideoNearestFilterItem.Content" xml:space="preserve">
+    <value>Nearest neighbour</value>
+  </data>
+  <data name="settingsVideoOriginalAspectItem.Content" xml:space="preserve">
+    <value>Original</value>
+  </data>
+  <data name="settingsVideoStretchAspectItem.Content" xml:space="preserve">
+    <value>Stretch</value>
+  </data>
+  <data name="settingsVideoTurboFrameSkipLabel.Text" xml:space="preserve">
+    <value>Turbo mode speed:</value>
+  </data>
+  <data name="settingsControlABindingLabel.Text" xml:space="preserve">
+    <value>A:</value>
+  </data>
+  <data name="settingsControlBBindingLabel.Text" xml:space="preserve">
+    <value>B:</value>
+  </data>
+  <data name="settingsControlDownBindingLabel.Text" xml:space="preserve">
+    <value>Down:</value>
+  </data>
+  <data name="settingsControlLBindingLabel.Text" xml:space="preserve">
+    <value>L:</value>
+  </data>
+  <data name="settingsControlLeftBindingLabel.Text" xml:space="preserve">
+    <value>Left:</value>
+  </data>
+  <data name="settingsControlRBindingLabel.Text" xml:space="preserve">
+    <value>R:</value>
+  </data>
+  <data name="settingsControlRightBindingLabel.Text" xml:space="preserve">
+    <value>Right:</value>
+  </data>
+  <data name="settingsControlSelectBindingLabel.Text" xml:space="preserve">
+    <value>Select:</value>
+  </data>
+  <data name="settingsControlStartBindingLabel.Text" xml:space="preserve">
+    <value>Start:</value>
+  </data>
+  <data name="settingsControlTurboBindingLabel.Text" xml:space="preserve">
+    <value>Turbo mode:</value>
+  </data>
+  <data name="settingsControlUpBindingLabel.Text" xml:space="preserve">
+    <value>Up:</value>
+  </data>
+  <data name="settingsAccentLabel.Text" xml:space="preserve">
+    <value>Accent color (requires restart):</value>
+  </data>
+  <data name="libraryHeader.Text" xml:space="preserve">
+    <value>Library</value>
+  </data>
+  <data name="libraryTitleDateLabel.Text" xml:space="preserve">
+    <value>Last played:</value>
+  </data>
+  <data name="libraryChooseDirectoryLabel.Text" xml:space="preserve">
+    <value>Choose directory</value>
+  </data>
+  <data name="folderPickerFilters" xml:space="preserve">
+    <value>.gb;.gbc;.gba;.zip</value>
+  </data>
+  <data name="libraryRefreshDirectoryLabel.Text" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="storageSubdirConfirmation" xml:space="preserve">
+    <value>Create sub directory '{0}' to store the games for you?</value>
+  </data>
+  <data name="storageSubdirConfirmationNo" xml:space="preserve">
+    <value>No, thanks</value>
+  </data>
+  <data name="storageSubdirConfirmationYes" xml:space="preserve">
+    <value>Yes, please</value>
+  </data>
+  <data name="storageAccessDenied" xml:space="preserve">
+    <value>Can't access file '{0}' right now. Try again in a few seconds.</value>
+  </data>
+  <data name="storageAccessDeniedCaption" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="storageSRAMAccessUnknownReason" xml:space="preserve">
+    <value>Can't access SRAM: Access denied.</value>
+  </data>
+  <data name="storageStateAccessUnknownReason" xml:space="preserve">
+    <value>Can't access save state: Access denied.</value>
+  </data>
+  <data name="libraryNeverPlayedText" xml:space="preserve">
+    <value>Never</value>
+  </data>
+  <data name="exitAppConfirm" xml:space="preserve">
+    <value>Close VBA-X?</value>
+  </data>
+  <data name="exitAppConfirmCaption" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="exitAppConfirmNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="exitAppConfirmYes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="libraryDefaultImageGBA" xml:space="preserve">
+    <value>Assets/defaultSnapshotGBA.png</value>
+  </data>
+  <data name="libraryDefaultImageGB" xml:space="preserve">
+    <value>Assets/defaultSnapshotGB.png</value>
+  </data>
+  <data name="libraryDefaultImageGBC" xml:space="preserve">
+    <value>Assets/defaultSnapshotGBC.png</value>
+  </data>
+  <data name="overlayLoadButton.Label" xml:space="preserve">
+    <value>Load</value>
+  </data>
+  <data name="overlayPauseButton.Label" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="overlayResetButton.Label" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="overlaySaveButton.Label" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="overlayState0Button.Label" xml:space="preserve">
+    <value>Select state 0</value>
+  </data>
+  <data name="overlayState1Button.Label" xml:space="preserve">
+    <value>Select state 1</value>
+  </data>
+  <data name="overlayState2Button.Label" xml:space="preserve">
+    <value>Select state 2</value>
+  </data>
+  <data name="overlayState3Button.Label" xml:space="preserve">
+    <value>Select state 3</value>
+  </data>
+  <data name="overlayState4Button.Label" xml:space="preserve">
+    <value>Select state 4</value>
+  </data>
+  <data name="overlayState5Button.Label" xml:space="preserve">
+    <value>Select state 5</value>
+  </data>
+  <data name="overlayState6Button.Label" xml:space="preserve">
+    <value>Select state 6</value>
+  </data>
+  <data name="overlayState7Button.Label" xml:space="preserve">
+    <value>Select state 7</value>
+  </data>
+  <data name="overlayState8Button.Label" xml:space="preserve">
+    <value>Select state 8</value>
+  </data>
+  <data name="overlayStateAutoButton.Label" xml:space="preserve">
+    <value>Select auto state</value>
+  </data>
+  <data name="loadConfirmMessage" xml:space="preserve">
+    <value>Unsaved progress will be lost.</value>
+  </data>
+  <data name="saveConfirmMessage" xml:space="preserve">
+    <value>This will overwrite the previous state.</value>
+  </data>
+  <data name="warningCaption" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="resetConfirmMessage" xml:space="preserve">
+    <value>Unsaved progress will be lost.</value>
+  </data>
+  <data name="settingsResetConfirmCheckbox.Text" xml:space="preserve">
+    <value>Game reset confirmation</value>
+  </data>
+  <data name="confirmDialogDontAsk" xml:space="preserve">
+    <value>Don't ask again</value>
+  </data>
+  <data name="confirmDialogNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="confirmDialogYes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="loadConfirmTitle" xml:space="preserve">
+    <value>Load state?</value>
+  </data>
+  <data name="resetConfirmTitle" xml:space="preserve">
+    <value>Reset?</value>
+  </data>
+  <data name="saveConfirmTitle" xml:space="preserve">
+    <value>Save state?</value>
+  </data>
+  <data name="appName" xml:space="preserve">
+    <value>VBA-X</value>
+  </data>
+  <data name="overlayCameraButton.Label" xml:space="preserve">
+    <value>Take screenshot</value>
+  </data>
+  <data name="settingsManualSnapshotCheckbox.Text" xml:space="preserve">
+    <value>Take snapshots manually</value>
+  </data>
+  <data name="settingsVideoScaleLabel.Text" xml:space="preserve">
+    <value>Video output scale:</value>
+  </data>
+  <data name="cancelLayoutButton.Label" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="commitLayoutButton.Label" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="resetLayoutButton.Label" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="settingsControlVPadHeader.Text" xml:space="preserve">
+    <value>Virtual controller</value>
+  </data>
+  <data name="customizeVPadButton.Label" xml:space="preserve">
+    <value>Customize Controller</value>
+  </data>
+  <data name="settingsVideoHQ2xFilterItem.Content" xml:space="preserve">
+    <value>HQ2x</value>
+  </data>
+  <data name="settingsVideoHQ3xFilterItem.Content" xml:space="preserve">
+    <value>HQ3x</value>
+  </data>
+  <data name="settingsVideoHQ4xFilterItem.Content" xml:space="preserve">
+    <value>HQ4x</value>
+  </data>
+  <data name="settingsVideo5xBRFilterItem.Content" xml:space="preserve">
+    <value>5xBR</value>
+  </data>
+  <data name="settingsVideo2xBRFilterItem.Content" xml:space="preserve">
+    <value>2xBR</value>
+  </data>
+  <data name="settingsVideo3xBRFilterItem.Content" xml:space="preserve">
+    <value>3xBR</value>
+  </data>
+  <data name="settingsVideo4xBRFilterItem.Content" xml:space="preserve">
+    <value>4xBR</value>
+  </data>
+  <data name="fpsLabel.Text" xml:space="preserve">
+    <value>FPS:</value>
+  </data>
+  <data name="hidHeader.Text" xml:space="preserve">
+    <value>HID Gamepads</value>
+  </data>
+  <data name="hidBindingLeftLabel.Text" xml:space="preserve">
+    <value>Left:</value>
+  </data>
+  <data name="hidDevicesLabel.Text" xml:space="preserve">
+    <value>Devices:</value>
+  </data>
+  <data name="hidButtonDescription" xml:space="preserve">
+    <value>Button {0}</value>
+  </data>
+  <data name="hidAxisDescription" xml:space="preserve">
+    <value>Axis {0}{1}</value>
+  </data>
+  <data name="hidDpadDown" xml:space="preserve">
+    <value>DPad Down</value>
+  </data>
+  <data name="hidDpadLeft" xml:space="preserve">
+    <value>DPad Left</value>
+  </data>
+  <data name="hidDpadRight" xml:space="preserve">
+    <value>DPad Right</value>
+  </data>
+  <data name="hidDpadUp" xml:space="preserve">
+    <value>DPad Up</value>
+  </data>
+  <data name="hidBindingALabel.Text" xml:space="preserve">
+    <value>A:</value>
+  </data>
+  <data name="hidBindingBLabel.Text" xml:space="preserve">
+    <value>B:</value>
+  </data>
+  <data name="hidBindingDownLabel.Text" xml:space="preserve">
+    <value>Down:</value>
+  </data>
+  <data name="hidBindingLLabel.Text" xml:space="preserve">
+    <value>L:</value>
+  </data>
+  <data name="hidBindingRightLabel.Text" xml:space="preserve">
+    <value>Right:</value>
+  </data>
+  <data name="hidBindingRLabel.Text" xml:space="preserve">
+    <value>R:</value>
+  </data>
+  <data name="hidBindingSelectLabel.Text" xml:space="preserve">
+    <value>Select:</value>
+  </data>
+  <data name="hidBindingStartLabel.Text" xml:space="preserve">
+    <value>Start:</value>
+  </data>
+  <data name="hidBindingTurboLabel.Text" xml:space="preserve">
+    <value>Turbo:</value>
+  </data>
+  <data name="hidBindingUpLabel.Text" xml:space="preserve">
+    <value>Up:</value>
+  </data>
+  <data name="clearBindingsButton1.Content" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="clearBindingsButton2.Content" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="settingsControlHidButton.Content" xml:space="preserve">
+    <value>Config HID controller</value>
+  </data>
+  <data name="aboutFAQ1.Text" xml:space="preserve">
+    <value>How do I import ROMs?</value>
+  </data>
+  <data name="aboutFAQ1Answer.Text" xml:space="preserve">
+    <value>Navigate to the 'Game library' page and press the 'Choose directory' button to the upper right. Select a directory that contains ROMs (.gb, .gbc, .gba, .zip files) or where you are going to put them. Afterwards, the library page will show all games contained in the selected directory. On your phone you can store files in any directory using either USB connection or apps like OneDrive or File Explorer (e.g. your documents folder).</value>
+  </data>
+  <data name="aboutFAQ2.Text" xml:space="preserve">
+    <value>How do I backup my saves?</value>
+  </data>
+  <data name="aboutFAQ2Answer.Text" xml:space="preserve">
+    <value>All saves (.sav, .sgm files) are stored in your ROM directory. To backup saves, you only have to copy the corresponding files to your backup location. To copy files you can use either USB connection or apps like OneDrive or File Explorer.</value>
+  </data>
+  <data name="aboutFAQ3.Text" xml:space="preserve">
+    <value>How do I increase the performance?</value>
+  </data>
+  <data name="aboutFAQ3Answer.Text" xml:space="preserve">
+    <value>Increase frame skip in video settings.</value>
+  </data>
+  <data name="aboutFAQ3Answer2.Text" xml:space="preserve">
+    <value>Select a lower video filter (xBR filters are slower).</value>
+  </data>
+  <data name="aboutFAQ3Answer3.Text" xml:space="preserve">
+    <value>Deactivate audio or high audio quality in audo settings.</value>
+  </data>
+  <data name="aboutFAQHeader.Text" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
+  <data name="cheatsHeader.Text" xml:space="preserve">
+    <value>Cheat codes</value>
+  </data>
+  <data name="errorCaption" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="invalidROMData" xml:space="preserve">
+    <value>Invalid ROM data.</value>
+  </data>
+  <data name="loadCheatDataError" xml:space="preserve">
+    <value>Unable to restore cheat data.</value>
+  </data>
+  <data name="cheatsAddButton.Content" xml:space="preserve">
+    <value>Add code(s)</value>
+  </data>
+  <data name="cheatsAddCodes.Text" xml:space="preserve">
+    <value>Code(s):</value>
+  </data>
+  <data name="cheatsAddDescription.Text" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="cheatsAddHeader.Text" xml:space="preserve">
+    <value>Add cheat codes</value>
+  </data>
+  <data name="cheatsManageHeader.Text" xml:space="preserve">
+    <value>Manage codes</value>
+  </data>
+  <data name="cheatsNoROMLoaded.Text" xml:space="preserve">
+    <value>You must load a ROM first.</value>
+  </data>
+  <data name="cheatsEmptyCodeMessage" xml:space="preserve">
+    <value>You must enter a valid cheat code.</value>
+  </data>
+  <data name="cheatsEmptyDescriptionMessage" xml:space="preserve">
+    <value>You must enter a cheat code description.</value>
+  </data>
+  <data name="cheatsInvalidCodeMessage" xml:space="preserve">
+    <value>Invalid cheat code(s).</value>
+  </data>
+  <data name="cheatsWriteError" xml:space="preserve">
+    <value>Error while storing cheats in file.</value>
+  </data>
+  <data name="aboutFAQ4.Text" xml:space="preserve">
+    <value>How do I synchronize saves across devices?</value>
+  </data>
+  <data name="aboutFAQ4Answer1.Text" xml:space="preserve">
+    <value>On a PC or tablet you can store your ROM directory in OneDrive for automatic cloud synchronization. OneDrive does not automatically synchronize your files on your phone, but you can copy cloud files to your phone (or vice versa) using the OneDrive app.</value>
+  </data>
+  <data name="aboutFAQ4Answer2.Text" xml:space="preserve">
+    <value>Or copy the files manually (using USB, apps or other methods) when you switch devices.</value>
+  </data>
+  <data name="cancelButtonLabel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="settingsAudioVolumeLabel.Text" xml:space="preserve">
+    <value>Volume:</value>
+  </data>
+  <data name="storageROMDirAccessDenied" xml:space="preserve">
+    <value>Can't access selected ROM directory, using default directory. Check whether the previously selected ROM directory is accessible or select a new one.</value>
+  </data>
+  <data name="libraryDefaultImageGBA_Dark" xml:space="preserve">
+    <value>Assets/defaultSnapshotGBA_Dark.png</value>
+  </data>
+  <data name="libraryDefaultImageGBA_Light" xml:space="preserve">
+    <value>Assets/defaultSnapshotGBA_Light.png</value>
+  </data>
+  <data name="libraryDefaultImageGBC_Dark" xml:space="preserve">
+    <value>Assets/defaultSnapshotGBC_Dark.png</value>
+  </data>
+  <data name="libraryDefaultImageGBC_Light" xml:space="preserve">
+    <value>Assets/defaultSnapshotGBC_Light.png</value>
+  </data>
+  <data name="libraryDefaultImageGB_Dark" xml:space="preserve">
+    <value>Assets/defaultSnapshotGB_Dark.png</value>
+  </data>
+  <data name="libraryDefaultImageGB_Light" xml:space="preserve">
+    <value>Assets/defaultSnapshotGB_Light.png</value>
+  </data>
+  <data name="libraryDefaultImageZIP" xml:space="preserve">
+    <value>Assets/defaultSnapshotGBA.png</value>
+  </data>
+  <data name="libraryDefaultImageZIP_Dark" xml:space="preserve">
+    <value>Assets/defaultSnapshotGBA_Dark.png</value>
+  </data>
+  <data name="libraryDefaultImageZIP_Light" xml:space="preserve">
+    <value>Assets/defaultSnapshotGBA_Light.png</value>
+  </data>
+  <data name="libraryEntryMenuDeleteLabel.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="libraryEntryMenuPinLabel.Text" xml:space="preserve">
+    <value>Pin to start</value>
+  </data>
+  <data name="libraryEntryMenuRenameLabel.Text" xml:space="preserve">
+    <value>Rename</value>
+  </data>
+  <data name="hidConnectError" xml:space="preserve">
+    <value>Cannot connect to HID device. Please contact the support using the given e-mail address on the about page to provide additional information about the used gamepad.</value>
+  </data>
+  <data name="hidRestoreLayoutError" xml:space="preserve">
+    <value>Error while restoring button layout.</value>
+  </data>
+  <data name="hidStoreLayoutError" xml:space="preserve">
+    <value>Error while storing button layout.</value>
+  </data>
+  <data name="unexpectedException" xml:space="preserve">
+    <value>Unexpected error: '{0}'. Please contact the support if this error persists.</value>
+  </data>
+  <data name="hidDeniedBySystem" xml:space="preserve">
+    <value>Access to device denied by your system.</value>
+  </data>
+  <data name="hidDeniedByUser" xml:space="preserve">
+    <value>Access to device denied by user. Please check whether this app has the permission to use the corresponding device in System Settings -&gt; Privacy -&gt;Other devices.</value>
+  </data>
+  <data name="settingsAutosave1.Content" xml:space="preserve">
+    <value>1 minute</value>
+  </data>
+  <data name="settingsAutosave10.Content" xml:space="preserve">
+    <value>10 minutes</value>
+  </data>
+  <data name="settingsAutosave15.Content" xml:space="preserve">
+    <value>15 minutes</value>
+  </data>
+  <data name="settingsAutosave3.Content" xml:space="preserve">
+    <value>3 minutes</value>
+  </data>
+  <data name="settingsAutosave5.Content" xml:space="preserve">
+    <value>5 minutes</value>
+  </data>
+  <data name="settingsAutosaveLabel.Text" xml:space="preserve">
+    <value>Autosave interval: </value>
+  </data>
+  <data name="settingsAutosaveOff.Content" xml:space="preserve">
+    <value>Off</value>
+  </data>
+</root>

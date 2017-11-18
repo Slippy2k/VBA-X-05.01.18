@@ -1,0 +1,156 @@
+﻿<Page
+    x:Class="VBA_X.Pages.HIDSetupPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VBA_X.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto" HorizontalScrollMode="Disabled" 
+                  HorizontalScrollBarVisibility="Hidden" x:Name="scrollViewer" SizeChanged="scrollViewer_SizeChanged"
+                  Background="{ThemeResource SubPageBackgroundThemeBrush}">
+                    
+        <Grid x:Name="wrappingPanel" Margin="8,0,15,0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" MinWidth="80" />
+                <ColumnDefinition Width="*" MaxWidth="150" />
+                <ColumnDefinition Width="*" MaxWidth="150" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0" Grid.Column="0" Margin="0,0,0,10" Background="Transparent"
+                    x:Name="backButton" Click="backButton_Click">
+                <Button.Content>
+                    <Viewbox Width="40" Height="25">
+                        <SymbolIcon Symbol="Back" />
+                    </Viewbox>
+                </Button.Content>
+            </Button>
+            
+            <TextBlock x:Uid="hidHeader" Style="{ThemeResource SubheaderTextBlockStyle}" FontSize="34" 
+                   Text="HID Gamepadsx" Margin="0,0,0,15" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" />
+
+            <TextBlock x:Uid="hidDevicesLabel" Text="Devicesx: " Grid.Row="1" Grid.Column="0" 
+                           Style="{StaticResource settingsLabelStyle}" Margin="0,0,0,10" />
+            <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <ComboBox x:Name="hidDevicesBox" Style="{StaticResource settingsComboboxStyle}" Grid.Column="0"
+                      SelectionChanged="hidDevicesBox_SelectionChanged" Margin="0,0,0,10">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <Button Grid.Column="1" Height="30" Width="50" Margin="5,0,0,10" Click="refreshDevices_Click">
+                    <Button.Content>
+                        <Viewbox Width="15" Height="15">
+                            <SymbolIcon Symbol="Refresh"/>
+                        </Viewbox>
+                    </Button.Content>
+                </Button>
+            </Grid>
+
+            <TextBlock x:Uid="hidBindingLeftLabel" Text="Leftx: " Grid.Row="2" Grid.Column="0" 
+                           Style="{StaticResource settingsLabelStyle}" />
+            <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="leftBindingBox" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="0,5,2,0" />
+            <TextBox Grid.Row="2" Grid.Column="2" Style="{StaticResource settingsBindingBoxStyle}" x:Name="leftBindingBox2" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="2,5,0,0" />
+
+            <TextBlock x:Uid="hidBindingUpLabel" Text="Upx: " Grid.Row="3" Grid.Column="0"
+                           Style="{StaticResource settingsLabelStyle}" />
+            <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="upBindingBox" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="0,5,2,0" />
+            <TextBox Grid.Row="3" Grid.Column="2" Style="{StaticResource settingsBindingBoxStyle}" x:Name="upBindingBox2" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="2,5,0,0" />
+
+            <TextBlock x:Uid="hidBindingRightLabel" Text="Rightx: " Grid.Row="4" Grid.Column="0"
+                           Style="{StaticResource settingsLabelStyle}" />
+            <TextBox Grid.Row="4" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="rightBindingBox" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="0,5,2,0" />
+            <TextBox Grid.Row="4" Grid.Column="2" Style="{StaticResource settingsBindingBoxStyle}" x:Name="rightBindingBox2" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="2,5,0,0" />
+
+            <TextBlock x:Uid="hidBindingDownLabel" Text="Downx: " Grid.Row="5" Grid.Column="0"
+                           Style="{StaticResource settingsLabelStyle}" />
+            <TextBox Grid.Row="5" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="downBindingBox" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="0,5,2,0"/>
+            <TextBox Grid.Row="5" Grid.Column="2" Style="{StaticResource settingsBindingBoxStyle}" x:Name="downBindingBox2" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="2,5,0,0"/>
+
+            <TextBlock x:Uid="hidBindingStartLabel" Text="Startx: " Grid.Row="6" Grid.Column="0"
+                           Style="{StaticResource settingsLabelStyle}" />
+            <TextBox Grid.Row="6" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="startBindingBox" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="0,5,2,0"/>
+            <TextBox Grid.Row="6" Grid.Column="2" Style="{StaticResource settingsBindingBoxStyle}" x:Name="startBindingBox2" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="2,5,0,0"/>
+
+            <TextBlock x:Uid="hidBindingSelectLabel" Text="Selectx: " Grid.Row="7" Grid.Column="0"
+                           Style="{StaticResource settingsLabelStyle}" />
+            <TextBox Grid.Row="7" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="selectBindingBox" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="0,5,2,0"/>
+            <TextBox Grid.Row="7" Grid.Column="2" Style="{StaticResource settingsBindingBoxStyle}" x:Name="selectBindingBox2" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="2,5,0,0"/>
+
+            <TextBlock x:Uid="hidBindingALabel" Text="Ax: " Grid.Row="8" Grid.Column="0"
+                           Style="{StaticResource settingsLabelStyle}" />
+            <TextBox Grid.Row="8" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="aBindingBox" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="0,5,2,0"/>
+            <TextBox Grid.Row="8" Grid.Column="2" Style="{StaticResource settingsBindingBoxStyle}" x:Name="aBindingBox2" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="2,5,0,0"/>
+
+            <TextBlock x:Uid="hidBindingBLabel" Text="Bx: " Grid.Row="9" Grid.Column="0"
+                           Style="{StaticResource settingsLabelStyle}" />
+            <TextBox Grid.Row="9" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="bBindingBox" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="0,5,2,0"/>
+            <TextBox Grid.Row="9" Grid.Column="2" Style="{StaticResource settingsBindingBoxStyle}" x:Name="bBindingBox2" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="2,5,0,0"/>
+
+            <TextBlock x:Uid="hidBindingLLabel" Text="L: " Grid.Row="10" Grid.Column="0"
+                           Style="{StaticResource settingsLabelStyle}" />
+            <TextBox Grid.Row="10" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="lBindingBox" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="0,5,2,0"/>
+            <TextBox Grid.Row="10" Grid.Column="2" Style="{StaticResource settingsBindingBoxStyle}" x:Name="lBindingBox2" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="2,5,0,0"/>
+
+            <TextBlock x:Uid="hidBindingRLabel" Text="Rx: " Grid.Row="11" Grid.Column="0"
+                           Style="{StaticResource settingsLabelStyle}" />
+            <TextBox Grid.Row="11" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="rBindingBox" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="0,5,2,0"/>
+            <TextBox Grid.Row="11" Grid.Column="2" Style="{StaticResource settingsBindingBoxStyle}" x:Name="rBindingBox2" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="2,5,0,0"/>
+
+            <TextBlock x:Uid="hidBindingTurboLabel" Text="Turbox: " Grid.Row="12" Grid.Column="0"
+                           Style="{StaticResource settingsLabelStyle}" />
+            <TextBox Grid.Row="12" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="turboBindingBox" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="0,5,2,0"/>
+            <TextBox Grid.Row="12" Grid.Column="2" Style="{StaticResource settingsBindingBoxStyle}" x:Name="turboBindingBox2" 
+                     TextAlignment="Left" IsReadOnly="True" Margin="2,5,0,0"/>
+
+            <Button Grid.Row="13" Grid.Column="1" Content="Clearx" HorizontalAlignment="Stretch" Margin="0,5,2,0" 
+                    x:Uid="clearBindingsButton1" x:Name="clearButton1" Click="clearButton1_Click" />
+            <Button Grid.Row="13" Grid.Column="2" Content="Clearx" HorizontalAlignment="Stretch" Margin="2,5,0,0"
+                    x:Uid="clearBindingsButton2" x:Name="clearButton2" Click="clearButton2_Click" />
+        </Grid>
+    </ScrollViewer>
+</Page>

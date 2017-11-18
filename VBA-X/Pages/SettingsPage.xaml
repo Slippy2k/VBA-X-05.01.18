@@ -1,0 +1,551 @@
+﻿<Page
+    x:Class="VBA_X.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VBA_X.Pages"
+    xmlns:vbax="using:VBA_X"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <ResourceDictionary>
+            <!-- Converters -->
+            <vbax:AspectRatioConverter x:Key="AspectRatioConverter" />
+            <vbax:FilterConverter x:Key="FilterConverter" />
+            <vbax:TurboFrameSkipConverter x:Key="TurboFrameSkipConverter" />
+            <vbax:ControllerStyleConverter x:Key="ControllerStyleConverter" />
+            <vbax:VirtualKeyConverter x:Key="VirtualKeyConverter" />
+            <vbax:ApplicationThemeConverter x:Key="ApplicationThemeConverter" />
+            <vbax:AutosaveIntervalConverter x:Key="AutosaveIntervalConverter" />
+            <vbax:ApplicationColorConverter x:Key="ApplicationColorConverter" />
+            <vbax:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+
+            <Style TargetType="Grid" x:Key="settingContainerStyle">
+                <Setter Property="Margin" Value="0,0,15,30" />
+                <Setter Property="VerticalAlignment" Value="Top" />
+            </Style>
+            <Style TargetType="TextBlock" x:Key="settingsCheckboxLabelStyle">
+                <Setter Property="TextWrapping" Value="Wrap" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Margin" Value="0,10,0,0" />
+            </Style>
+            <Style TargetType="CheckBox" x:Key="settingsCheckboxStyle">
+                <Setter Property="Width" Value="20" />
+                <Setter Property="MinWidth" Value="20" />
+                <Setter Property="HorizontalAlignment" Value="Right" />
+                <Setter Property="Margin" Value="0,10,0,0" />
+            </Style>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto" HorizontalScrollMode="Disabled" HorizontalScrollBarVisibility="Hidden"
+                  x:Name="scrollViewer" SizeChanged="scrollViewer_SizeChanged"
+                  Background="{ThemeResource SubPageBackgroundThemeBrush}">
+        <Grid x:Name="wrappingPanel" Margin="8,0,0,0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="columnOne" Width="*" />
+                <ColumnDefinition x:Name="columnTwo" Width="*" />
+                <ColumnDefinition x:Name="columnThree" Width="*" />
+                <ColumnDefinition x:Name="columnFour" Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Uid="settingsHeader" Style="{ThemeResource SubheaderTextBlockStyle}" FontSize="34" Text="Header" Margin="0,0,0,15" Grid.Row="0" Grid.ColumnSpan="4" />
+
+            <Grid x:Name="generalContainer" Grid.Row="1" Grid.Column="0" Style="{StaticResource settingContainerStyle}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource settingHeaderContainerStyle}">
+                    <TextBlock x:Uid="settingsGeneralHeader" Style="{ThemeResource SubheaderTextBlockStyle}" Foreground="{ThemeResource HeaderForegroundAccentBrush}" FontSize="30" Text="Generalx" />
+                </Grid>
+
+                <TextBlock x:Uid="settingsThemeLabel" Text="Themex: " Grid.Row="1" Grid.Column="0" 
+                           Style="{StaticResource settingsLabelStyle}" />
+                <ComboBox x:Name="themeComboBox" Style="{StaticResource settingsComboboxStyle}" Grid.Row="1" Grid.Column="1"
+                          SelectedIndex="{Binding Path=Theme, Mode=TwoWay, Converter={StaticResource ApplicationThemeConverter}}">
+                    <ComboBoxItem x:Uid="settingsLightThemeItem" Content="Lightx" />
+                    <ComboBoxItem x:Uid="settingsDarkThemeItem" Content="Darkx" />
+                </ComboBox>
+
+                <TextBlock x:Uid="settingsAccentLabel" Text="Accent colorx (requires restart): " Grid.Row="2" Grid.Column="0"
+                                Style="{StaticResource settingsLabelStyle}" />
+                <ComboBox x:Name="accentComboBox" Style="{StaticResource settingsComboboxStyle}" Grid.Row="2" Grid.Column="1"
+                          SelectedIndex="{Binding Path=AccentColor, Mode=TwoWay, Converter={StaticResource ApplicationColorConverter}}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Rectangle Width="12" Height="12" Fill="{Binding Brush}" Margin="0,0,8,0" />
+                                <TextBlock VerticalAlignment="Center" Text="{Binding ColorName}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <TextBlock x:Uid="settingsFullscreenCheckbox" x:Name="fullscreenTriggerLabel" Text="Use fullscreen: x" Grid.Row="3" Grid.Column="0"
+                                Style="{StaticResource settingsCheckboxLabelStyle}" Tapped="fullscreenTriggerLabel_Tapped"/>
+                <CheckBox x:Name="fullscreenCheckbox" Style="{StaticResource settingsCheckboxStyle}" Grid.Row="3" Grid.Column="1"
+                          IsChecked="{Binding Path=Fullscreen, Mode=TwoWay}" />
+
+                <TextBlock x:Uid="settingsSaveConfirmCheckbox" x:Name="saveConfirmTriggerLabel" Text="Save confirmationx" Grid.Row="4" Grid.Column="0"
+                                Style="{StaticResource settingsCheckboxLabelStyle}" Tapped="saveConfirmTriggerLabel_Tapped" />
+                <CheckBox x:Name="saveConfirmCheckbox" Style="{StaticResource settingsCheckboxStyle}" Grid.Row="4" Grid.Column="1" 
+                          IsChecked="{Binding Path=SaveConfirmation, Mode=TwoWay}" />
+
+                <TextBlock x:Uid="settingsLoadConfirmCheckbox" x:Name="loadConfirmTriggerLabel" Text="Load confirmationx"  Grid.Row="5" Grid.Column="0"
+                                Style="{StaticResource settingsCheckboxLabelStyle}" Tapped="loadConfirmTriggerLabel_Tapped" />
+                <CheckBox x:Name="loadConfirmCheckbox" Style="{StaticResource settingsCheckboxStyle}"  Grid.Row="5" Grid.Column="1" 
+                          IsChecked="{Binding Path=LoadConfirmation, Mode=TwoWay}" />
+
+                <TextBlock x:Uid="settingsResetConfirmCheckbox" x:Name="resetConfirmTriggerLabel" Text="Reset confirmationx"  Grid.Row="6" Grid.Column="0"
+                                Style="{StaticResource settingsCheckboxLabelStyle}" Tapped="resetConfirmTriggerLabel_Tapped" />
+                <CheckBox x:Name="resetConfirmCheckbox" Style="{StaticResource settingsCheckboxStyle}"  Grid.Row="6" Grid.Column="1" 
+                          IsChecked="{Binding Path=ResetConfirmation, Mode=TwoWay}" />
+
+                <TextBlock x:Uid="settingsManualSnapshotCheckbox" x:Name="settingsManualSnapshotLabel" Text="Take snapshots manuallyx"  Grid.Row="7" Grid.Column="0"
+                                Style="{StaticResource settingsCheckboxLabelStyle}" Tapped="settingsManualSnapshotLabel_Tapped" />
+                <CheckBox x:Name="manualSnapshotCheckbox" Style="{StaticResource settingsCheckboxStyle}"  Grid.Row="7" Grid.Column="1" 
+                          IsChecked="{Binding Path=ManualSnapshots, Mode=TwoWay}" />
+
+                <TextBlock x:Uid="settingsAutosaveLabel" Text="Autosave interval: x" Grid.Row="8" Grid.Column="0" 
+                           Style="{StaticResource settingsLabelStyle}" />
+                <ComboBox x:Name="autosaveCombobox" Style="{StaticResource settingsComboboxStyle}" Grid.Row="8" Grid.Column="1"
+                          SelectedIndex="{Binding Path=AutoSaveInterval, Mode=TwoWay, Converter={StaticResource AutosaveIntervalConverter}}">
+                    <ComboBoxItem x:Uid="settingsAutosaveOff" Content="Offx" />
+                    <ComboBoxItem x:Uid="settingsAutosave1" Content="1 minutex" />
+                    <ComboBoxItem x:Uid="settingsAutosave3" Content="3 minutesx" />
+                    <ComboBoxItem x:Uid="settingsAutosave5" Content="5 minutesx" />
+                    <ComboBoxItem x:Uid="settingsAutosave10" Content="10 minutesx" />
+                    <ComboBoxItem x:Uid="settingsAutosave15" Content="15 minutesx" />
+                </ComboBox>
+            </Grid>
+
+
+
+            <Grid x:Name="videoContainer" Grid.Row="1" Grid.Column="1" Style="{StaticResource settingContainerStyle}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource settingHeaderContainerStyle}">
+                    <TextBlock x:Uid="settingsVideoHeader" Style="{ThemeResource SubheaderTextBlockStyle}" Foreground="{ThemeResource HeaderForegroundAccentBrush}" FontSize="30" Text="Videox" />
+                </Grid>
+
+                <TextBlock x:Uid="settingsVideoFPSTrigger" x:Name="fpsTriggerLabel" Text="Show FPS: x" Grid.Row="1" Grid.Column="0"
+                                Style="{StaticResource settingsCheckboxLabelStyle}" Tapped="fpsTriggerLabel_Tapped" />
+                <CheckBox x:Name="fpsTriggerCheckbox" Style="{StaticResource settingsCheckboxStyle}" Grid.Row="1" Grid.Column="1" 
+                          IsChecked="{Binding Path=ShowFPS, Mode=TwoWay}"/>
+
+                <TextBlock x:Uid="settingsVideoFrameSkipLabel" Text="Frame skip: x"
+                                Style="{StaticResource settingsLabelStyle}" Grid.Row="2" Grid.Column="0" />
+                <ComboBox x:Name="frameSkipComboBox" Style="{StaticResource settingsComboboxStyle}"
+                          Grid.Row="2" Grid.Column="1" SelectedIndex="{Binding Path=FrameSkip, Mode=TwoWay}">
+                    <ComboBoxItem Content="0" />
+                    <ComboBoxItem Content="1" />
+                    <ComboBoxItem Content="2" />
+                    <ComboBoxItem Content="3" />
+                    <ComboBoxItem Content="4" />
+                    <ComboBoxItem Content="5" />
+                    <ComboBoxItem Content="6" />
+                </ComboBox>
+
+                <TextBlock x:Uid="settingsVideoTurboFrameSkipLabel" Text="Turbo mode speed: x"
+                                Style="{StaticResource settingsLabelStyle}" Grid.Row="3" Grid.Column="0" />
+                <ComboBox x:Name="turboFrameSkipComboBox" Style="{StaticResource settingsComboboxStyle}"
+                          Grid.Row="3" Grid.Column="1" SelectedIndex="{Binding Path=TurboFrameSkip, Mode=TwoWay, Converter={StaticResource TurboFrameSkipConverter}}">
+                    <ComboBoxItem Content="1" />
+                    <ComboBoxItem Content="2" />
+                    <ComboBoxItem Content="3" />
+                    <ComboBoxItem Content="4" />
+                    <ComboBoxItem Content="5" />
+                    <ComboBoxItem Content="6" />
+                    <ComboBoxItem Content="7" />
+                </ComboBox>
+
+                <TextBlock x:Uid="settingsVideoAspectLabel" Text="Aspect ratio: x"
+                                Style="{StaticResource settingsLabelStyle}" Grid.Row="4" Grid.Column="0" />
+                <ComboBox x:Name="aspectRatioComboBox" Style="{StaticResource settingsComboboxStyle}"
+                          Grid.Row="4" Grid.Column="1" SelectedIndex="{Binding Path=AspectRatio, Mode=TwoWay,Converter={StaticResource AspectRatioConverter}}">
+                    <ComboBoxItem x:Uid="settingsVideoOriginalAspectItem" Content="Originalx" />
+                    <ComboBoxItem x:Uid="settingsVideoStretchAspectItem" Content="Stretchx" />
+                    <ComboBoxItem x:Uid="settingsVideo4t3AspectItem" Content="4:3x" />
+                    <ComboBoxItem x:Uid="settingsVideo5t4AspectItem" Content="5:4x" />
+                    <ComboBoxItem x:Uid="settingsVideo1t1AspectItem" Content="1:1x" />
+                </ComboBox>
+
+                <TextBlock x:Uid="settingsVideoFilterLabel" Text="Filter: x" Grid.Row="5" Grid.Column="0"
+                                Style="{StaticResource settingsLabelStyle}" />
+                <ComboBox x:Name="filterComboBox" Style="{StaticResource settingsComboboxStyle}" Grid.Row="5" SelectionChanged="filterComboBox_SelectionChanged"
+                          Grid.Column="1" SelectedIndex="{Binding Path=Filter, Mode=TwoWay, Converter={StaticResource FilterConverter}}">
+                    <ComboBoxItem x:Uid="settingsVideoNearestFilterItem" Content="Nearestx" />
+                    <ComboBoxItem x:Uid="settingsVideoBilinearFilterItem" Content="Stretchx" />
+                    <ComboBoxItem x:Uid="settingsVideoHQ2xFilterItem" Content="HQ2xx" x:Name="hq2xItem"  
+                                  Visibility="{Binding AllowsComplexShaders, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                    <ComboBoxItem x:Uid="settingsVideoHQ3xFilterItem" Content="HQ3xx" x:Name="hq3xItem"  
+                                  Visibility="{Binding AllowsComplexShaders, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                    <ComboBoxItem x:Uid="settingsVideoHQ4xFilterItem" Content="HQ4xx" x:Name="hq4xItem" 
+                                  Visibility="{Binding AllowsComplexShaders, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                    <ComboBoxItem x:Uid="settingsVideo2xBRFilterItem" Content="2xBRx" x:Name="xBR2Item" 
+                                  Visibility="{Binding AllowsComplexShaders, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                    <ComboBoxItem x:Uid="settingsVideo3xBRFilterItem" Content="3xBRx" x:Name="xBR3Item" 
+                                  Visibility="{Binding AllowsComplexShaders, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                    <ComboBoxItem x:Uid="settingsVideo4xBRFilterItem" Content="4xBRx" x:Name="xBR4Item" 
+                                  Visibility="{Binding AllowsComplexShaders, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                    <ComboBoxItem x:Uid="settingsVideo5xBRFilterItem" Content="5xBRx" x:Name="xBR5Item" 
+                                  Visibility="{Binding AllowsComplexShaders, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                </ComboBox>
+                
+                <TextBlock x:Uid="settingsVideoScaleLabel" Text="Video output scale:x" 
+                           Style="{StaticResource settingsSliderLabelStyle}" Grid.Row="6" Grid.Column="0" />
+                <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right" 
+                            VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource settingsSliderLabelStyle}" 
+                               Text="{Binding ElementName=videoScaleSlider, Path=Value}" />
+                    <TextBlock Style="{StaticResource settingsSliderLabelStyle}" 
+                               Text="%" />
+                </StackPanel>
+                <Slider x:Name="videoScaleSlider" Minimum="50" Maximum="100" Value="{Binding Path=VideoScale, Mode=TwoWay}" 
+                        Style="{StaticResource settingsSliderStyle}" Grid.Row="7" Grid.ColumnSpan="2"></Slider>
+            </Grid>
+
+            <Grid x:Name="controlContainer" Grid.Row="1" Grid.Column="2" Style="{StaticResource settingContainerStyle}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource settingHeaderContainerStyle}">
+                    <TextBlock x:Uid="settingsControlHeader" Style="{ThemeResource SubheaderTextBlockStyle}" Foreground="{ThemeResource HeaderForegroundAccentBrush}" FontSize="30" Text="Controlsx" />
+                </Grid>
+
+                <TextBlock x:Uid="settingsControllerXboxNotice" Text="Xbox 360 controller notice" TextWrapping="Wrap"
+                               Grid.Row="1" Grid.ColumnSpan="2" Margin="0,10,0,0"/>
+
+                <!--<StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                        <TextBlock x:Uid="settingsControllerXboxAssignLabel" Text="Assign Xbox Controller to: x" VerticalAlignment="Center" 
+                                   Style="{StaticResource settingsLabelStyle}" />
+                        <ComboBox SelectedIndex="0" x:Name="controllerXboxAssignCombobox" Style="{StaticResource settingsComboboxStyle}">
+                            <ComboBoxItem x:Uid="settingsControllerPlayer1Item" Content="Player 1 x" />
+                            <ComboBoxItem x:Uid="settingsControllerPlayer2Item" Content="Player 2 x" />
+                        </ComboBox>
+                    </StackPanel>-->
+                
+                <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Content="Config HID devicesx" 
+                        Margin="0,10,0,0" x:Name="configHidButton" x:Uid="settingsControlHidButton" Click="configHidButton_Click"/>
+
+
+                <TextBlock x:Uid="settingsControlVPadHeader" Text="Virtual controllerx" FontSize="24" 
+                               Style="{ThemeResource SubheaderTextBlockStyle}" Grid.Row="3" Grid.ColumnSpan="2" 
+                               Margin="0,10,0,0"/>
+
+                <TextBlock x:Uid="settingsControlPadTrigger" x:Name="virtualPadTriggerLabel" Text="Show virtual controller: x"
+                               Style="{StaticResource settingsCheckboxLabelStyle}" Tapped="virtualPadTriggerLabel_Tapped"
+                               Grid.Row="4" Grid.Column="0"/>
+                <CheckBox x:Name="virtualPadTrigger" Style="{StaticResource settingsCheckboxStyle}" 
+                          Grid.Row="4" Grid.Column="1" IsChecked="{Binding Path=ShowVirtualController, Mode=TwoWay}"/>
+
+                <TextBlock x:Uid="settingsControllerStyleLabel" Text="Controller style: x"
+                           Visibility="{Binding ElementName=virtualPadTrigger, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}"
+                           Style="{StaticResource settingsLabelStyle}" Grid.Row="5" Grid.Column="0"/>
+                <ComboBox x:Name="controllerStyleCombobox" Style="{StaticResource settingsComboboxStyle}" Grid.Row="5" Grid.Column="1" 
+                          Visibility="{Binding ElementName=virtualPadTrigger, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}"
+                          SelectedIndex="{Binding Path=ControllerStyle, Mode=TwoWay, Converter={StaticResource ControllerStyleConverter}}">
+                    <ComboBoxItem x:Uid="settingsController4WayItem" Content="4-Way d-pad x" />
+                    <ComboBoxItem x:Uid="settingsController8WayItem" Content="8-Way d-pad x" />
+                    <ComboBoxItem x:Uid="settingsControllerFixedItem" Content="Fixed stick x" />
+                    <ComboBoxItem x:Uid="settingsControllerDynamicItem" Content="Dynamic stick x" />
+                </ComboBox>
+
+                <TextBlock x:Uid="settingsControlStickDeadzoneLabel" Text="Stick deadzone:x" 
+                           Visibility="{Binding ElementName=virtualPadTrigger, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}"
+                           Style="{StaticResource settingsSliderLabelStyle}" Grid.Row="6" Grid.Column="0" />
+                <TextBlock Text="{Binding ElementName=deadzoneSlider, Path=Value}" 
+                           Visibility="{Binding ElementName=virtualPadTrigger, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}"
+                           Style="{StaticResource settingsSliderLabelStyle}" Grid.Row="6" Grid.Column="1" 
+                           HorizontalAlignment="Right" />
+                <Slider x:Name="deadzoneSlider" Minimum="5" Maximum="50" Value="{Binding Path=StickDeadzone, Mode=TwoWay}" 
+                        Visibility="{Binding ElementName=virtualPadTrigger, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}"
+                        Style="{StaticResource settingsSliderStyle}" Grid.Row="7" Grid.ColumnSpan="2" />
+
+                <TextBlock x:Uid="settingsControllerScaleLabel" Text="Virtual controller scale:x" 
+                           Visibility="{Binding ElementName=virtualPadTrigger, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}"
+                           Style="{StaticResource settingsSliderLabelStyle}" Grid.Row="8" Grid.Column="0" />
+                <StackPanel Orientation="Horizontal" Grid.Row="8" Grid.Column="1" HorizontalAlignment="Right" 
+                            Visibility="{Binding ElementName=virtualPadTrigger, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}"
+                            VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource settingsSliderLabelStyle}" 
+                               Text="{Binding ElementName=controllerScaleSlider, Path=Value}" />
+                    <TextBlock Style="{StaticResource settingsSliderLabelStyle}" 
+                               Text="%" />
+                </StackPanel>
+                <Slider x:Name="controllerScaleSlider" Minimum="30" Maximum="200" Value="{Binding Path=VirtualControllerScale, Mode=TwoWay}" 
+                        Visibility="{Binding ElementName=virtualPadTrigger, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}"
+                        Style="{StaticResource settingsSliderStyle}" Grid.Row="9" Grid.ColumnSpan="2"></Slider>
+
+                <TextBlock x:Uid="settingsControllerOpacityLabel" Text="Virtual controller opacity:x" 
+                           Visibility="{Binding ElementName=virtualPadTrigger, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}"
+                           Style="{StaticResource settingsSliderLabelStyle}" Grid.Row="10" Grid.Column="0" />
+                <StackPanel Orientation="Horizontal" Grid.Row="10" Grid.Column="1" HorizontalAlignment="Right" 
+                            Visibility="{Binding ElementName=virtualPadTrigger, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}"
+                            VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource settingsSliderLabelStyle}" 
+                               Text="{Binding ElementName=controllerOpacitySlider, Path=Value}"/>
+                    <TextBlock Style="{StaticResource settingsSliderLabelStyle}" 
+                               Text="%" />
+                </StackPanel>
+                <Slider x:Name="controllerOpacitySlider" Minimum="10" Maximum="100"  Value="{Binding Path=VirtualControllerOpacity, Mode=TwoWay}" 
+                        Visibility="{Binding ElementName=virtualPadTrigger, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}"
+                        Style="{StaticResource settingsSliderStyle}" Grid.Row="11" Grid.ColumnSpan="2"></Slider>
+
+                <Grid Grid.Row="12" Grid.ColumnSpan="2" x:Name="bindingGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock x:Uid="settingsControlBindingHeader" Text="Key bindings" FontSize="24" 
+                               Style="{ThemeResource SubheaderTextBlockStyle}" Grid.Row="0" Grid.ColumnSpan="2" 
+                               Margin="0,10,0,0"/>
+
+                    <TextBlock x:Uid="settingsControlUpBindingLabel" Text="Upx: " Grid.Row="1" Grid.Column="0"
+                           Style="{StaticResource settingsLabelStyle}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="upBindingBox"
+                             Text="{Binding Path=UpBinding, Mode=TwoWay, Converter={StaticResource VirtualKeyConverter}}"
+                             KeyDown="upBindingBox_KeyDown" KeyUp="upBindingBox_KeyUp"/>
+
+                    <TextBlock x:Uid="settingsControlLeftBindingLabel" Text="Leftx: " Grid.Row="2" Grid.Column="0"
+                           Style="{StaticResource settingsLabelStyle}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="leftBindingBox"
+                             Text="{Binding Path=LeftBinding, Mode=TwoWay, Converter={StaticResource VirtualKeyConverter}}"
+                             KeyDown="leftBindingBox_KeyDown" KeyUp="leftBindingBox_KeyUp"/>
+
+                    <TextBlock x:Uid="settingsControlDownBindingLabel" Text="Downx: " Grid.Row="3" Grid.Column="0" 
+                           Style="{StaticResource settingsLabelStyle}"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="downBindingBox"
+                             Text="{Binding Path=DownBinding, Mode=TwoWay, Converter={StaticResource VirtualKeyConverter}}"
+                             KeyDown="downBindingBox_KeyDown" KeyUp="downBindingBox_KeyUp"/>
+
+                    <TextBlock x:Uid="settingsControlRightBindingLabel" Text="Rightx: " Grid.Row="4" Grid.Column="0"
+                           Style="{StaticResource settingsLabelStyle}"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="rightBindingBox"
+                             Text="{Binding Path=RightBinding, Mode=TwoWay, Converter={StaticResource VirtualKeyConverter}}"
+                             KeyDown="rightBindingBox_KeyDown" KeyUp="rightBindingBox_KeyUp"/>
+
+                    <TextBlock x:Uid="settingsControlABindingLabel" Text="Ax: " Grid.Row="5" Grid.Column="0"
+                           Style="{StaticResource settingsLabelStyle}" />
+                    <TextBox Grid.Row="5" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="aBindingBox"
+                             Text="{Binding Path=ABinding, Mode=TwoWay, Converter={StaticResource VirtualKeyConverter}}"
+                             KeyDown="aBindingBox_KeyDown" KeyUp="aBindingBox_KeyUp"/>
+
+                    <TextBlock x:Uid="settingsControlBBindingLabel" Text="Bx: " Grid.Row="6" Grid.Column="0"
+                           Style="{StaticResource settingsLabelStyle}" />
+                    <TextBox Grid.Row="6" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="bBindingBox"
+                             Text="{Binding Path=BBinding, Mode=TwoWay, Converter={StaticResource VirtualKeyConverter}}"
+                             KeyDown="bBindingBox_KeyDown" KeyUp="bBindingBox_KeyUp"/>
+
+                    <TextBlock x:Uid="settingsControlLBindingLabel" Text="Lx: " Grid.Row="7" Grid.Column="0"
+                           Style="{StaticResource settingsLabelStyle}" />
+                    <TextBox Grid.Row="7" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="lBindingBox"
+                             Text="{Binding Path=LBinding, Mode=TwoWay, Converter={StaticResource VirtualKeyConverter}}"
+                             KeyDown="lBindingBox_KeyDown" KeyUp="lBindingBox_KeyUp"/>
+
+                    <TextBlock x:Uid="settingsControlRBindingLabel" Text="Rx: " Grid.Row="8" Grid.Column="0"
+                           Style="{StaticResource settingsLabelStyle}"/>
+                    <TextBox Grid.Row="8" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="rBindingBox"
+                             Text="{Binding Path=RBinding, Mode=TwoWay, Converter={StaticResource VirtualKeyConverter}}"
+                             KeyDown="rBindingBox_KeyDown" KeyUp="rBindingBox_KeyUp"/>
+
+                    <TextBlock x:Uid="settingsControlStartBindingLabel" Text="Startx: " Grid.Row="9" Grid.Column="0"
+                           Style="{StaticResource settingsLabelStyle}" />
+                    <TextBox Grid.Row="9" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="startBindingBox"
+                             Text="{Binding Path=StartBinding, Mode=TwoWay, Converter={StaticResource VirtualKeyConverter}}"
+                             KeyDown="startBindingBox_KeyDown" KeyUp="startBindingBox_KeyUp"/>
+
+                    <TextBlock x:Uid="settingsControlSelectBindingLabel" Text="Selectx: " Grid.Row="10" Grid.Column="0"
+                           Style="{StaticResource settingsLabelStyle}"/>
+                    <TextBox Grid.Row="10" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="selectBindingBox"
+                             Text="{Binding Path=SelectBinding, Mode=TwoWay, Converter={StaticResource VirtualKeyConverter}}"
+                             KeyDown="selectBindingBox_KeyDown" KeyUp="selectBindingBox_KeyUp"/>
+
+                    <TextBlock x:Uid="settingsControlTurboBindingLabel" Text="Turbox: "
+                               Grid.Row="11" Grid.Column="0" Style="{StaticResource settingsLabelStyle}"/>
+                    <TextBox Grid.Row="11" Grid.Column="1" Style="{StaticResource settingsBindingBoxStyle}" x:Name="turboBindingBox"
+                             Text="{Binding Path=TurboBinding, Mode=TwoWay, Converter={StaticResource VirtualKeyConverter}}"
+                             KeyDown="turboBindingBox_KeyDown" KeyUp="turboBindingBox_KeyUp"/>
+                </Grid>
+            </Grid>
+
+
+            <Grid x:Name="audioContainer" Grid.Row="1" Grid.Column="3" Style="{StaticResource settingContainerStyle}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource settingHeaderContainerStyle}">
+                    <TextBlock x:Uid="settingsAudioHeader" Style="{ThemeResource SubheaderTextBlockStyle}" 
+                               Foreground="{ThemeResource HeaderForegroundAccentBrush}" FontSize="30" Text="Audiox" />
+                </Grid>
+
+                <TextBlock x:Uid="settingsAudioSoundTrigger" x:Name="soundTriggerLabel" Text="Enable sound: x"
+                            Style="{StaticResource settingsCheckboxLabelStyle}" Tapped="soundTriggerLabel_Tapped" 
+                            Grid.Row="1" Grid.Column="0"/>
+                <CheckBox x:Name="soundTriggerCheckbox" Style="{StaticResource settingsCheckboxStyle}" Grid.Row="1" Grid.Column="1"
+                          IsChecked="{Binding Path=EnableSound, Mode=TwoWay}"/>
+
+                <TextBlock x:Uid="settingsAudioQualityTrigger" x:Name="soundQualityTriggerLabel" Text="Improve quality: x"
+                            Style="{StaticResource settingsCheckboxLabelStyle}" Tapped="soundQualityTriggerLabel_Tapped"
+                           Visibility="{Binding EnableSound, Converter={StaticResource BoolToVisibilityConverter}}"
+                            Grid.Row="2" Grid.Column="0" />
+                <CheckBox x:Name="soundQualityTriggerCheckbox" Style="{StaticResource settingsCheckboxStyle}" Grid.Row="2" Grid.Column="1"
+                           Visibility="{Binding EnableSound, Converter={StaticResource BoolToVisibilityConverter}}"
+                          IsChecked="{Binding Path=SyncAudio, Mode=TwoWay}"/>
+                
+
+                <TextBlock x:Uid="settingsAudioVolumeLabel" Text="Volume:x" Margin="0,10,0,0"
+                           Visibility="{Binding EnableSound, Converter={StaticResource BoolToVisibilityConverter}}"
+                           Style="{StaticResource settingsSliderLabelStyle}" Grid.Row="3" Grid.Column="0" />
+                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" 
+                            Visibility="{Binding EnableSound, Converter={StaticResource BoolToVisibilityConverter}}"
+                            VerticalAlignment="Center" Margin="0,10,0,0">
+                    <TextBlock Style="{StaticResource settingsSliderLabelStyle}" 
+                               Text="{Binding ElementName=audioVolumeSlider, Path=Value}"/>
+                    <TextBlock Style="{StaticResource settingsSliderLabelStyle}" 
+                               Text="%" />
+                </StackPanel>
+                <Slider x:Name="audioVolumeSlider" Minimum="0" Maximum="100"  Value="{Binding Path=SoundVolume, Mode=TwoWay}" 
+                        Visibility="{Binding EnableSound, Converter={StaticResource BoolToVisibilityConverter}}"
+                        Style="{StaticResource settingsSliderStyle}" Grid.Row="4" Grid.ColumnSpan="2"></Slider>
+            </Grid>
+        </Grid>
+
+        <!-- Responsive VisualStates -->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1280" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="columnOne.Width" Value="*" />
+                        <Setter Target="columnTwo.Width" Value="*" />
+                        <Setter Target="columnThree.Width" Value="*" />
+                        <Setter Target="columnFour.Width" Value="*" />
+                        <Setter Target="generalContainer.(Grid.Row)" Value="1" />
+                        <Setter Target="videoContainer.(Grid.Row)" Value="1" />
+                        <Setter Target="controlContainer.(Grid.Row)" Value="1" />
+                        <Setter Target="audioContainer.(Grid.Row)" Value="1" />
+                        <Setter Target="generalContainer.(Grid.Column)" Value="0" />
+                        <Setter Target="videoContainer.(Grid.Column)" Value="1" />
+                        <Setter Target="controlContainer.(Grid.Column)" Value="2" />
+                        <Setter Target="audioContainer.(Grid.Column)" Value="3" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="750" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="columnOne.Width" Value="*" />
+                        <Setter Target="columnTwo.Width" Value="*" />
+                        <Setter Target="columnThree.Width" Value="0" />
+                        <Setter Target="columnFour.Width" Value="0" />
+                        <Setter Target="generalContainer.(Grid.Row)" Value="1" />
+                        <Setter Target="videoContainer.(Grid.Row)" Value="1" />
+                        <Setter Target="controlContainer.(Grid.Row)" Value="2" />
+                        <Setter Target="audioContainer.(Grid.Row)" Value="2" />
+                        <Setter Target="generalContainer.(Grid.Column)" Value="0" />
+                        <Setter Target="videoContainer.(Grid.Column)" Value="1" />
+                        <Setter Target="controlContainer.(Grid.Column)" Value="0" />
+                        <Setter Target="audioContainer.(Grid.Column)" Value="1" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="columnOne.Width" Value="*" />
+                        <Setter Target="columnTwo.Width" Value="0" />
+                        <Setter Target="columnThree.Width" Value="0" />
+                        <Setter Target="columnFour.Width" Value="0" />
+                        <Setter Target="generalContainer.(Grid.Row)" Value="1" />
+                        <Setter Target="videoContainer.(Grid.Row)" Value="2" />
+                        <Setter Target="controlContainer.(Grid.Row)" Value="3" />
+                        <Setter Target="audioContainer.(Grid.Row)" Value="4" />
+                        <Setter Target="generalContainer.(Grid.Column)" Value="0" />
+                        <Setter Target="videoContainer.(Grid.Column)" Value="0" />
+                        <Setter Target="controlContainer.(Grid.Column)" Value="0" />
+                        <Setter Target="audioContainer.(Grid.Column)" Value="0" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </ScrollViewer>
+</Page>
